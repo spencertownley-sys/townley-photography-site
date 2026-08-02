@@ -275,7 +275,7 @@ footer a:hover{color:var(--paper);}
     <a onclick="go('home');jump('work')">Work</a>
     <a onclick="go('portrait')">Photography</a>
     <a onclick="go('video')">Video</a>
-    <a onclick="go('home');jump('journal')">Journal</a>
+    <a onclick="go('journal')">Journal</a>
     <a class="btn btn-brass bookbtn">Book</a>
   </div>
 </nav>
@@ -387,11 +387,8 @@ footer a:hover{color:var(--paper);}
   <!-- JOURNAL -->
   <section id="journal" style="padding-top:20px"><div class="wrap">
     <div class="sec-head ctr rv"><span class="eyebrow">From the journal</span><h2>Recent <span class="it">shoots &amp; notes.</span></h2></div>
-    <div class="jgrid">
-      <div class="jcard rv"><div class="imgwrap"><img src="https://picsum.photos/seed/j1/600/400"></div><div class="meta">Real Estate · Sep</div><h3>Why drone shots sell homes faster</h3><p>A Bainbridge listing, and what changed when we added aerials.</p></div>
-      <div class="jcard rv d1"><div class="imgwrap"><img src="https://picsum.photos/seed/j2/600/400"></div><div class="meta">Portraits · Oct</div><h3>The best senior-portrait spots in Seattle</h3><p>Five locations that photograph beautifully in fall light.</p></div>
-      <div class="jcard rv d2"><div class="imgwrap"><img src="https://picsum.photos/seed/j3/600/400"></div><div class="meta">Landscape · Nov</div><h3>Chasing storm light in the Cascades</h3><p>Notes on shooting the moody weather most people wait out.</p></div>
-    </div>
+    <div class="jgrid" id="jgridHome"></div>
+    <div style="margin-top:30px;text-align:center"><a class="btn btn-ghost" onclick="go('journal')">Read the journal</a></div>
   </div></section>
 
   <!-- BOOKING BAND -->
@@ -585,6 +582,25 @@ footer a:hover{color:var(--paper);}
   </div></section>
 </div>
 
+<!-- ============ JOURNAL ============ -->
+<div class="page" id="page-journal">
+  <section class="inq-hero"><div class="wrap">
+    <div class="backhome" onclick="go('home')">← Back to home</div>
+    <div class="sec-head rv"><span class="eyebrow">The Journal</span><h2>Shoots, sessions, <span class="it">and notes from the field.</span></h2>
+      <p>Behind-the-scenes notes from real sessions around the Puget Sound: locations, light, and what actually worked.</p></div>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
+    <div class="jgrid" id="jgridAll"></div>
+  </div></section>
+
+  <section style="padding-top:20px"><div class="wrap"><div class="band rv">
+    <h2>Have a shoot in <span class="it">mind?</span></h2>
+    <p>Check live availability and book your session: portraits, property, or film.</p>
+    <a class="btn btn-brass">Check availability</a>
+  </div></div></section>
+</div>
+
 <!-- FOOTER -->
 <footer><div class="wrap">
   <div class="note" style="margin-bottom:34px">Prototype: placeholder photos via picsum.photos. Real galleries, booking calendar, blog CMS, and store are built in Wix Studio (see the Website Outline).</div>
@@ -594,7 +610,7 @@ footer a:hover{color:var(--paper);}
       <p style="margin-top:10px;font-size:14px;max-width:34ch;">Professional photography and film across the Puget Sound region. Credible, dependable, fairly priced.</p>
     </div>
     <div><h4>Services</h4><a onclick="go('portrait')">Portraits</a><a class="foot-inq">Real Estate</a><a onclick="go('video')">Video</a><a class="foot-inq">Landscape &amp; Wildlife</a></div>
-    <div><h4>Studio</h4><a onclick="go('home');jump('work')">Work</a><a onclick="go('home')">About</a><a onclick="go('home');jump('journal')">Journal</a><a class="foot-inq">Contact</a><a class="foot-inq">Book</a></div>
+    <div><h4>Studio</h4><a onclick="go('home');jump('work')">Work</a><a onclick="go('home')">About</a><a onclick="go('journal')">Journal</a><a class="foot-inq">Contact</a><a class="foot-inq">Book</a></div>
     <div class="news"><h4>Newsletter</h4>
       <p style="font-size:13px;margin-bottom:12px;">Location guides and seasonal offers. No spam.</p>
       <input placeholder="you@email.com"><a class="btn btn-brass" style="width:100%;text-align:center">Subscribe</a>
@@ -610,6 +626,28 @@ footer a:hover{color:var(--paper);}
 const nav=document.getElementById('nav');
 addEventListener('scroll',onScroll,{passive:true});
 function onScroll(){nav.classList.toggle('scrolled',scrollY>60); vMeasure();}
+
+/* ---- JOURNAL / BLOG ----
+   Add a new post by adding one object to POSTS (newest or oldest, order doesn't matter,
+   it's sorted by date). The home page always shows the 3 most recent; the Journal page
+   shows all of them. Everything else updates itself. */
+const POSTS=[
+  {date:'2026-07-05', cat:'Real Estate', month:'Jul', title:'Why drone shots sell homes faster', excerpt:'A Bainbridge listing, and what changed when we added aerials.', img:'https://picsum.photos/seed/j1/600/400'},
+  {date:'2026-06-18', cat:'Portraits', month:'Jun', title:"The best senior-portrait spots in Seattle", excerpt:'Five locations that photograph beautifully in fall light.', img:'https://picsum.photos/seed/j2/600/400'},
+  {date:'2026-05-30', cat:'Landscape', month:'May', title:'Chasing storm light in the Cascades', excerpt:'Notes on shooting the moody weather most people wait out.', img:'https://picsum.photos/seed/j3/600/400'}
+];
+function postCard(p,i){
+  const d=['','d1','d2','d3','d4'][i%5];
+  return `<div class="jcard rv ${d}"><div class="imgwrap"><img src="${p.img}"></div><div class="meta">${p.cat} · ${p.month}</div><h3>${p.title}</h3><p>${p.excerpt}</p></div>`;
+}
+function renderJournal(){
+  const sorted=[...POSTS].sort((a,b)=>new Date(b.date)-new Date(a.date));
+  const home=document.getElementById('jgridHome');
+  if(home) home.innerHTML = sorted.slice(0,3).map(postCard).join('');
+  const all=document.getElementById('jgridAll');
+  if(all) all.innerHTML = sorted.map(postCard).join('');
+}
+renderJournal();
 
 // reveal on scroll
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14});
