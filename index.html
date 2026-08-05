@@ -364,11 +364,11 @@ footer a:hover{color:var(--paper);}
   <!-- PITCH + STATS -->
   <section style="padding-top:20px"><div class="wrap"><div class="pitch rv">
     <span class="eyebrow" style="color:var(--brass)">Who's behind it</span>
-    <h2 style="margin-top:16px">Ten years, hundreds of clients, one region known by heart.</h2>
+    <h2 style="margin-top:16px">Ten years, dozens of clients from individuals to Fortune 500s, one region known by heart.</h2>
     <p>I'm Spencer Townley, a Puget Sound photographer and filmmaker. I shoot broadly on purpose: the same eye that lights a family portrait frames a listing, a ridgeline, or a brand film. Professional, dependable, fairly priced.</p>
     <div class="stats">
       <div class="stat"><div class="n">10+</div><div class="l">Years shooting</div></div>
-      <div class="stat"><div class="n">100s</div><div class="l">Clients served</div></div>
+      <div class="stat"><div class="n">Dozens</div><div class="l">Individuals to Fortune 500</div></div>
       <div class="stat"><div class="n">Part&nbsp;107</div><div class="l">Licensed drone pilot</div></div>
       <div class="stat"><div class="n">6</div><div class="l">Service lines</div></div>
     </div>
@@ -426,13 +426,13 @@ footer a:hover{color:var(--paper);}
         <ul><li>30 minutes, one location</li><li>10 edited digital images</li><li>Private online gallery</li><li>Print release</li></ul>
         <a class="btn btn-ghost" style="width:100%;text-align:center">Book Mini</a></div>
       <div class="pkg feat rv d1"><div class="tag">Signature · Most popular</div><div class="pr">$450</div>
-        <ul><li>60 minutes, 1–2 looks</li><li>30 edited digital images</li><li>Private gallery + print release</li><li>Location guidance</li></ul>
+        <ul><li>60 minutes, 1 to 2 looks</li><li>30 edited digital images</li><li>Private gallery + print release</li><li>Location guidance</li></ul>
         <a class="btn btn-brass" style="width:100%;text-align:center">Book Signature</a></div>
       <div class="pkg rv d2"><div class="tag">Full Experience</div><div class="pr">$700</div>
         <ul><li>2 hours, multiple looks/locations</li><li>60 edited images</li><li>$75 print credit + wardrobe consult</li><li>Priority scheduling</li></ul>
         <a class="btn btn-ghost" style="width:100%;text-align:center">Book Full</a></div>
     </div>
-    <p style="text-align:center;margin-top:18px;font-size:13px;color:var(--mut)">Add-ons: extra edited image $20 · travel beyond 30 mi · 48-hr rush available</p>
+    <p style="text-align:center;margin-top:18px;font-size:13px;color:var(--mut)">Add-ons: extra edited image $20 · travel beyond 30 mi</p>
   </div></section>
 
   <section><div class="wrap">
@@ -461,7 +461,7 @@ footer a:hover{color:var(--paper);}
     <div class="sec-head ctr rv"><span class="eyebrow">Good to know</span><h2>Questions, <span class="it">answered.</span></h2></div>
     <div class="faq">
       <div class="qa"><div class="q">What areas do you serve?<span>+</span></div><div class="a">All of Puget Sound: Seattle, Tacoma, Bellevue, Everett, Kitsap and surrounding communities. Travel beyond 30 miles adds a small fee.</div></div>
-      <div class="qa"><div class="q">How soon will I get my photos?<span>+</span></div><div class="a">Standard delivery is about one week via a private online gallery. A 48-hour rush is available for an added fee.</div></div>
+      <div class="qa"><div class="q">How soon will I get my photos?<span>+</span></div><div class="a">Standard delivery is 48 hours via a private online gallery. Video projects run about one week.</div></div>
       <div class="qa"><div class="q">Do I get print rights?<span>+</span></div><div class="a">Yes, every package includes a print release so you can print your images wherever you like, or order through the gallery.</div></div>
       <div class="qa"><div class="q">What should we wear?<span>+</span></div><div class="a">I'll send guidance once we book. The Signature and Full packages include wardrobe/location planning to make it easy.</div></div>
     </div>
@@ -632,6 +632,11 @@ function onScroll(){nav.classList.toggle('scrolled',scrollY>60); vMeasure();}
    it's sorted by date). The home page always shows the 3 most recent; the Journal page
    shows all of them. Everything else updates itself. */
 const POSTS=[
+  {date:'2026-07-08', cat:'Portraits', month:'Jul', title:'What to Wear for a Family Portrait Session in the Pacific Northwest', excerpt:'Layers, texture, and why nobody needs to match. A practical guide built for our weather.', img:'https://picsum.photos/seed/j4/600/400', slug:'what-to-wear-family-portraits-pacific-northwest'},
+  {date:'2026-07-10', cat:'Portraits', month:'Jul', title:'How Much Do Portrait Photographers Cost in Seattle? A Real Pricing Breakdown', excerpt:'Real numbers, from a $250 mini to a $700 full session, and what you actually get at each tier.', img:'https://picsum.photos/seed/j5/600/400', slug:'portrait-photographer-cost-seattle'},
+  {date:'2026-07-14', cat:'Portraits', month:'Jul', title:'Golden Hour in Seattle: When and Where to Shoot for the Best Light', excerpt:'When golden hour actually happens here, and the spots that make the most of it.', img:'https://picsum.photos/seed/j6/600/400', slug:'golden-hour-seattle-best-light'},
+  {date:'2026-07-17', cat:'Portraits', month:'Jul', title:'Best Spots for Couples Portraits in Seattle, Season by Season', excerpt:'Green Lake, Kerry Park, Lincoln Park, and when each one earns its place.', img:'https://picsum.photos/seed/j7/600/400', slug:'couples-portrait-spots-seattle'},
+  {date:'2026-07-20', cat:'Real Estate', month:'Jul', title:'Do Drone Photos Actually Help a Listing Sell Faster?', excerpt:'What aerials add to a listing, which properties benefit, and when they are not worth it.', img:'https://picsum.photos/seed/j8/600/400', slug:'do-drone-photos-help-listings-sell-faster'},
   {date:'2026-07-05', cat:'Real Estate', month:'Jul', title:'Why drone shots sell homes faster', excerpt:'A Bainbridge listing, and what changed when we added aerials.', img:'https://picsum.photos/seed/j1/600/400', slug:'why-drone-shots-sell-homes-faster'},
   {date:'2026-06-18', cat:'Portraits', month:'Jun', title:"The best senior-portrait spots in Seattle", excerpt:'Five locations that photograph beautifully in fall light.', img:'https://picsum.photos/seed/j2/600/400', slug:'best-senior-portrait-spots-seattle'},
   {date:'2026-05-30', cat:'Landscape', month:'May', title:'Chasing storm light in the Cascades', excerpt:'Notes on shooting the moody weather most people wait out.', img:'https://picsum.photos/seed/j3/600/400', slug:'chasing-storm-light-cascades'}
