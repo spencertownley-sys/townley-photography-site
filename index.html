@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Townley Photography Prototype</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -632,6 +633,11 @@ function onScroll(){nav.classList.toggle('scrolled',scrollY>60); vMeasure();}
    it's sorted by date). The home page always shows the 3 most recent; the Journal page
    shows all of them. Everything else updates itself. */
 const POSTS=[
+  {date:'2026-03-10', cat:'Landscape', month:'Mar', title:'How to License Landscape Photography for Commercial Use', excerpt:'Rights, usage, and what a license actually buys. A plain-language guide for brands.', img:'https://picsum.photos/seed/j14/600/400', slug:'license-landscape-photography-commercial-use'},
+  {date:'2026-03-24', cat:'Landscape', month:'Mar', title:'What Makes a Landscape Photo Worth Printing Large', excerpt:'Resolution is the least of it. What separates a wall print from a scroll-past.', img:'https://picsum.photos/seed/j15/600/400', slug:'landscape-photo-worth-printing-large'},
+  {date:'2026-04-07', cat:'Wildlife', month:'Apr', title:"How a Telephoto Lens Changes What's Possible in Wildlife Photography", excerpt:'Distance is the whole game. What real reach means for the animals and the photos.', img:'https://picsum.photos/seed/j16/600/400', slug:'telephoto-lens-wildlife-photography'},
+  {date:'2026-04-16', cat:'Event Video', month:'Apr', title:'What to Look for in an Event Videographer in Seattle', excerpt:'The questions worth asking before you book, and the answers that actually matter.', img:'https://picsum.photos/seed/j17/600/400', slug:'event-videographer-seattle-what-to-look-for'},
+  {date:'2026-04-28', cat:'Event Video', month:'Apr', title:'A Day in the Life: What an Event Videographer Actually Does on Site', excerpt:'From load-in to final cut. What you are actually paying for on event day.', img:'https://picsum.photos/seed/j18/600/400', slug:'event-videographer-day-on-site'},
   {date:'2026-01-13', cat:'Real Estate', month:'Jan', title:'What to Expect During a Real Estate Photo Shoot: A Timeline for Agents', excerpt:'From arrival to delivered gallery in 48 hours. The whole process, minute by minute.', img:'https://picsum.photos/seed/j9/600/400', slug:'real-estate-photo-shoot-timeline-agents'},
   {date:'2026-01-22', cat:'Real Estate', month:'Jan', title:'FAA Part 107, Explained: Why Your Real Estate Photographer Needs a Drone License', excerpt:'What the license covers, why Seattle airspace makes it non-negotiable, and how to check for one.', img:'https://picsum.photos/seed/j10/600/400', slug:'faa-part-107-real-estate-drone-license'},
   {date:'2026-02-03', cat:'Real Estate', month:'Feb', title:'How to Prep a Home for Photos Before the Photographer Arrives', excerpt:'A room-by-room checklist that makes the difference between fine photos and great ones.', img:'https://picsum.photos/seed/j11/600/400', slug:'prep-home-for-real-estate-photos'},
