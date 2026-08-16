@@ -105,6 +105,10 @@ section{padding:110px 0;}
 .pitch{background:var(--pacific);color:var(--paper);border-radius:20px;padding:64px 48px;}
 .pitch h2{color:var(--paper);font-size:clamp(26px,3.4vw,40px);max-width:20ch;line-height:1.08;}
 .pitch p{color:rgba(246,242,235,.8);margin-top:18px;max-width:52ch;}
+.pitch-grid{display:grid;grid-template-columns:240px 1fr;gap:44px;align-items:center;}
+@media(max-width:820px){.pitch-grid{grid-template-columns:1fr;}}
+.pitch-photo{border-radius:16px;overflow:hidden;aspect-ratio:3/4;background:#1c2b24;}
+.pitch-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.03);}
 .stats{display:flex;flex-wrap:wrap;gap:40px;margin-top:40px;padding-top:34px;border-top:1px solid rgba(246,242,235,.18);}
 .stat .n{font-family:'Fraunces',serif;font-size:38px;color:var(--paper);}
 .stat .l{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-top:2px;}
@@ -347,31 +351,36 @@ footer a:hover{color:var(--paper);}
       <button class="chip" data-f="video">Video</button>
     </div>
     <div class="gallery" id="gallery">
-      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="images/gallery-portrait-1.jpg" alt="Portrait photography, Puget Sound"></div><div class="cap">Portrait</div></div>
-      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-landwild-1.jpg" alt="Landscape photography, canyon arch"></div><div class="cap">Landscape</div></div>
-      <div class="gitem" data-cat="realestate"><div class="imgwrap"><img src="images/gallery-realestate-1.jpg" alt="Real estate photography, high-rise building"></div><div class="cap">Real Estate</div></div>
+      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="images/gallery-portrait-1.jpg" alt="Portrait photography, first birthday cake smash session"></div><div class="cap">Portrait</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-landwild-1.jpg" alt="Landscape photography, red rock desert road"></div><div class="cap">Landscape</div></div>
+      <div class="gitem" data-cat="realestate"><div class="imgwrap"><img src="images/gallery-realestate-1.jpg" alt="Architectural photography, modern pavilion structure"></div><div class="cap">Real Estate</div></div>
       <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-wildlife-1.jpg" alt="Wildlife and pet photography, coastal bluff"></div><div class="cap">Wildlife</div></div>
       <div class="gitem" data-cat="video"><div class="imgwrap"><img src="images/gallery-video-1.jpg" alt="Film and video photography, golden hour portrait"></div><div class="cap">Video</div></div>
-      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="images/gallery-portrait-2.jpg" alt="Portrait photography, mother and baby"></div><div class="cap">Portrait</div></div>
-      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-landwild-2.jpg" alt="Landscape photography, autumn aspen trees"></div><div class="cap">Landscape</div></div>
-      <div class="gitem" data-cat="realestate"><div class="imgwrap"><img src="images/gallery-realestate-2.jpg" alt="Real estate and architecture photography"></div><div class="cap">Real Estate</div></div>
-      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-wildlife-2.jpg" alt="Wildlife photography, bighorn sheep"></div><div class="cap">Wildlife</div></div>
-      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="images/gallery-portrait-3.jpg" alt="Portrait photography, outdoor session"></div><div class="cap">Portrait</div></div>
+      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="images/gallery-portrait-2.jpg" alt="Portrait photography, family with baby"></div><div class="cap">Portrait</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-landwild-2.jpg" alt="Landscape photography, Washington State ferry"></div><div class="cap">Landscape</div></div>
+      <div class="gitem" data-cat="realestate"><div class="imgwrap"><img src="images/gallery-realestate-2.jpg" alt="Urban architecture and city skyline photography"></div><div class="cap">Real Estate</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-wildlife-2.jpg" alt="Wildlife photography, elephant at sunset"></div><div class="cap">Wildlife</div></div>
+      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="images/gallery-portrait-3.jpg" alt="Portrait photography, studio session"></div><div class="cap">Portrait</div></div>
       <div class="gitem" data-cat="video"><div class="imgwrap"><img src="images/gallery-video-2.jpg" alt="Event film photography, cinematic portrait"></div><div class="cap">Video</div></div>
-      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-landwild-3.jpg" alt="Landscape photography, sandstone formation"></div><div class="cap">Landscape</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-landwild-3.jpg" alt="Wildlife photography, bighorn sheep"></div><div class="cap">Landscape</div></div>
     </div>
   </div></section>
 
   <!-- PITCH + STATS -->
   <section style="padding-top:20px"><div class="wrap"><div class="pitch rv">
-    <span class="eyebrow" style="color:var(--brass)">Who's behind it</span>
-    <h2 style="margin-top:16px">Ten years, dozens of clients from individuals to Fortune 500s, one region known by heart.</h2>
-    <p>I'm Spencer Townley, a Puget Sound photographer and filmmaker. I shoot broadly on purpose: the same eye that lights a family portrait frames a listing, a ridgeline, or a brand film. Professional, dependable, fairly priced.</p>
-    <div class="stats">
-      <div class="stat"><div class="n">10+</div><div class="l">Years shooting</div></div>
-      <div class="stat"><div class="n">Dozens</div><div class="l">Individuals to Fortune 500</div></div>
-      <div class="stat"><div class="n">Part&nbsp;107</div><div class="l">Licensed drone pilot</div></div>
-      <div class="stat"><div class="n">6</div><div class="l">Service lines</div></div>
+    <div class="pitch-grid">
+      <div class="pitch-photo"><img src="images/about-me.jpg" alt="Spencer Townley, Puget Sound photographer and filmmaker"></div>
+      <div>
+        <span class="eyebrow" style="color:var(--brass)">Who's behind it</span>
+        <h2 style="margin-top:16px">Ten years, dozens of clients from individuals to Fortune 500s, one region known by heart.</h2>
+        <p>I'm Spencer Townley, a Puget Sound photographer and filmmaker. I shoot broadly on purpose: the same eye that lights a family portrait frames a listing, a ridgeline, or a brand film. Professional, dependable, fairly priced.</p>
+        <div class="stats">
+          <div class="stat"><div class="n">10+</div><div class="l">Years shooting</div></div>
+          <div class="stat"><div class="n">Dozens</div><div class="l">Individuals to Fortune 500</div></div>
+          <div class="stat"><div class="n">Part&nbsp;107</div><div class="l">Licensed drone pilot</div></div>
+          <div class="stat"><div class="n">6</div><div class="l">Service lines</div></div>
+        </div>
+      </div>
     </div>
   </div></div></section>
 
@@ -497,9 +506,9 @@ footer a:hover{color:var(--paper);}
   <section style="padding-top:0"><div class="wrap">
     <div class="sec-head ctr rv"><span class="eyebrow">Recent work</span><h2>A few <span class="it">listings.</span></h2></div>
     <div class="gallery">
-      <div class="gitem"><div class="imgwrap"><img src="images/tile-realestate.jpg" alt="Real estate photography, modern building exterior"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/gallery-realestate-1.jpg" alt="Real estate photography, glass high-rise building"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/gallery-realestate-2.jpg" alt="Real estate and architecture photography"></div></div>
+      <div class="gitem"><div class="imgwrap"><img src="images/tile-realestate.jpg" alt="Real estate photography, glass high-rise architectural detail"></div></div>
+      <div class="gitem"><div class="imgwrap"><img src="images/gallery-realestate-1.jpg" alt="Architectural photography, modern pavilion structure"></div></div>
+      <div class="gitem"><div class="imgwrap"><img src="images/gallery-realestate-2.jpg" alt="Urban architecture and city skyline photography"></div></div>
     </div>
   </div></section>
 
@@ -549,7 +558,7 @@ footer a:hover{color:var(--paper);}
 <!-- ============ LANDSCAPE & WILDLIFE LANDING ============ -->
 <div class="page" id="page-landwild">
   <section class="lp-hero">
-    <div class="imgwrap"><img src="images/landwild-hero.jpg" alt="Fine art landscape photography, natural rock arch"></div>
+    <div class="imgwrap"><img src="images/landwild-hero.jpg" alt="Fine art landscape photography, red rock canyon"></div>
     <div class="veil"></div>
     <div class="wrap inner">
       <div class="eyebrow" style="color:var(--brass)">Landscape &amp; Wildlife · Fine Art</div>
@@ -568,10 +577,10 @@ footer a:hover{color:var(--paper);}
   <section style="padding-top:0"><div class="wrap">
     <div class="sec-head ctr rv"><span class="eyebrow">Recent work</span><h2>A few <span class="it">frames.</span></h2></div>
     <div class="gallery">
-      <div class="gitem"><div class="imgwrap"><img src="images/tile-landwild.jpg" alt="Fine art landscape photography, natural rock arch"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/gallery-landwild-1.jpg" alt="Landscape photography, canyon arch"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/gallery-landwild-2.jpg" alt="Landscape photography, autumn aspen trees"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/gallery-landwild-3.jpg" alt="Landscape photography, sandstone formation"></div></div>
+      <div class="gitem"><div class="imgwrap"><img src="images/tile-landwild.jpg" alt="Fine art landscape photography, autumn aspen trees"></div></div>
+      <div class="gitem"><div class="imgwrap"><img src="images/gallery-landwild-1.jpg" alt="Landscape photography, red rock desert road"></div></div>
+      <div class="gitem"><div class="imgwrap"><img src="images/gallery-landwild-2.jpg" alt="Landscape photography, Washington State ferry"></div></div>
+      <div class="gitem"><div class="imgwrap"><img src="images/gallery-landwild-3.jpg" alt="Wildlife photography, bighorn sheep"></div></div>
     </div>
   </div></section>
 
