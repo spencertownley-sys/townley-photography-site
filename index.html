@@ -3,11 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Townley Photography | Puget Sound Portrait, Real Estate &amp; Wildlife Photography</title>
-<meta name="description" content="Puget Sound photography and film: portraits, real estate/drone, landscape &amp; wildlife fine art, event and marketing video. Based in Washington State, ten years behind the camera.">
+<title>Townley Photography | Puget Sound Portrait, Real Estate & Wildlife Photography</title>
+<meta name="description" content="Puget Sound photography and film: portraits, real estate and drone, landscape and wildlife fine art, event and marketing video. Ten years behind the camera in Washington State.">
+<link rel="canonical" href="https://townleyphotography.com/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Townley Photography","description":"Professional photography and film across the Puget Sound region.","url":"https://townleyphotography.com","image":"https://townleyphotography.com/images/hero.jpg","areaServed":["Seattle","Tacoma","Bellevue","Everett","Kitsap County","Puget Sound"],"founder":{"@type":"Person","name":"Spencer Townley"}}
+</script>
 <style>
 :root{--ink:#1B1A1F;--paper:#F6F2EB;--pacific:#26362F;--fog:#C9C6BE;--brass:#A8895C;--mut:#6a6875;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -73,7 +77,7 @@ section{padding:110px 0;}
 .range{border-top:1px solid rgba(27,26,31,.12);border-bottom:1px solid rgba(27,26,31,.12);padding:34px 0;}
 .range .row{display:flex;flex-wrap:wrap;gap:8px 34px;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:clamp(22px,3.2vw,34px);font-weight:300;}
 .range .dot{width:6px;height:6px;border-radius:50%;background:var(--brass);display:inline-block;}
-.range .mut{color:var(--fog);}
+.range .mut{color:inherit;}
 
 /* SERVICE TILES: centered rows, photo row + video row */
 .grouplbl{text-align:center;margin-bottom:16px;}
@@ -150,8 +154,6 @@ footer a:hover{color:var(--paper);}
 .note{max-width:760px;margin:0 auto;background:#efe9df;border:1px dashed #c3b795;border-radius:10px;padding:12px 18px;font-size:12.5px;color:#6a6146;text-align:center;}
 
 /* PAGES */
-.page{display:none;}
-.page.active{display:block;}
 
 /* PORTRAIT LANDING */
 .lp-hero{position:relative;height:78vh;min-height:520px;display:flex;align-items:center;color:var(--paper);}
@@ -215,9 +217,6 @@ footer a:hover{color:var(--paper);}
 #page-video{background:#0d0c11;}
 .v-hud{position:fixed;top:0;left:0;right:0;height:3px;background:rgba(255,255,255,.08);z-index:60;}
 .v-hud i{display:block;height:100%;width:0;background:var(--brass);}
-.v-phase{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:60;display:flex;gap:8px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;}
-.v-phase span{padding:6px 12px;border-radius:100px;border:1px solid rgba(246,242,235,.18);color:rgba(246,242,235,.4);transition:.3s;}
-.v-phase span.on{background:var(--brass);border-color:var(--brass);color:var(--ink);font-weight:600;}
 .v-intro{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;background:radial-gradient(120% 120% at 50% 0%,#1a1922,#0d0c11);color:var(--paper);position:relative;}
 .v-back{position:absolute;top:80px;left:32px;font-size:13px;letter-spacing:.05em;color:var(--brass);cursor:pointer;}
 .v-intro h1{font-size:clamp(40px,7vw,86px);line-height:1;color:var(--paper);}
@@ -268,36 +267,32 @@ footer a:hover{color:var(--paper);}
 .v-after .eyebrow{color:var(--brass);}
 .v-after h2{font-size:clamp(28px,4vw,46px);margin:14px 0;}
 .v-after p{color:#555;max-width:52ch;margin:0 auto 26px;}
-.v-note{max-width:760px;margin:30px auto 0;background:#efe9df;border:1px dashed #c3b795;border-radius:12px;padding:16px 20px;font-size:13px;color:#6a6146;text-align:left;line-height:1.6;}
-.v-note code{background:#e2dccb;padding:1px 6px;border-radius:4px;font-size:12px;}
+.navlinks a.on{color:var(--brass);}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="nav">
-  <div class="brand nav-light" onclick="go('home')"><div class="mono">T</div><div class="wm">Townley</div></div>
+  <a class="brand nav-light" href="/"><div class="mono">T</div><div class="wm">Townley</div></a>
   <div class="navlinks nav-light">
-    <a onclick="go('home');jump('work')">Work</a>
-    <a onclick="go('portrait')">Photography</a>
-    <a onclick="go('video')">Video</a>
-    <a onclick="go('journal')">Journal</a>
-    <a class="btn btn-brass bookbtn">Book</a>
+    <a href="/" class="on">Home</a>
+    <a href="/portfolio/">Photography</a>
+    <a href="/video/">Video</a>
+    <a href="/journal/">Journal</a>
+    <a class="btn btn-brass bookbtn" href="/book/">Book</a>
   </div>
 </nav>
 
-<!-- ============ HOME ============ -->
-<div class="page active" id="page-home">
 
   <header class="hero">
-    <div class="imgwrap"><img src="images/hero.jpg" alt="Washington State ferry crossing the Puget Sound under a dramatic sky"></div>
+    <div class="imgwrap"><img src="/images/hero.jpg" alt="Washington State ferry crossing the Puget Sound under a dramatic sky"></div>
     <div class="veil"></div>
     <div class="wrap inner">
       <div class="eyebrow rv in" style="color:var(--brass)">Townley Photography</div>
       <h1 class="rv in d1">Puget Sound,<br>in its <span class="it">best light.</span></h1>
       <p class="rv in d2">Portraits, property, landscape, wildlife, and film. Ten years behind the camera across one corner of the map.</p>
       <div class="cta rv in d3">
-        <a class="btn btn-brass">Book a session</a>
+        <a class="btn btn-brass" href="/book/">Book a session</a>
         <a class="btn btn-ghost" onclick="jump('work')">See the work</a>
       </div>
     </div>
@@ -311,7 +306,7 @@ footer a:hover{color:var(--paper);}
       <span>Landscape&nbsp;&amp;&nbsp;Wildlife</span>
     </div>
     <div class="row rv" style="margin-top:10px">
-      <span class="mut">Event&nbsp;Film</span><span class="dot"></span><span class="mut">Marketing&nbsp;Video</span>
+      <span>Event&nbsp;Film</span><span class="dot"></span><span>Marketing&nbsp;Video</span>
     </div>
   </div></div>
 
@@ -325,15 +320,15 @@ footer a:hover{color:var(--paper);}
 
     <div class="grouplbl rv"><span class="eyebrow">Photography</span></div>
     <div class="srow">
-      <div class="tile rv" onclick="go('portrait')"><div class="imgwrap"><img src="images/tile-portrait.jpg" alt="Portrait photography, Puget Sound"></div><div class="go">View →</div><div class="lbl"><div class="t">Portraits</div><div class="s">Flagship</div></div></div>
-      <div class="tile rv d1" onclick="go('realestate')"><div class="imgwrap"><img src="images/tile-realestate.jpg" alt="Real estate photography, modern building exterior"></div><div class="go">View →</div><div class="lbl"><div class="t">Real Estate</div><div class="s">+ Drone / 3D</div></div></div>
-      <div class="tile rv d2" onclick="go('landwild')"><div class="imgwrap"><img src="images/tile-landwild.jpg" alt="Landscape and wildlife fine art photography"></div><div class="go">View →</div><div class="lbl"><div class="t">Landscape &amp; Wildlife</div><div class="s">Fine Art</div></div></div>
+      <div class="tile rv" href="/portrait/"><div class="imgwrap"><img src="/images/tile-portrait.jpg" alt="Portrait photography, Puget Sound"></div><div class="go">View →</div><div class="lbl"><div class="t">Portraits</div><div class="s">Flagship</div></div></div>
+      <div class="tile rv d1" href="/real-estate/"><div class="imgwrap"><img src="/images/tile-realestate.jpg" alt="Real estate photography, modern building exterior"></div><div class="go">View →</div><div class="lbl"><div class="t">Real Estate</div><div class="s">+ Drone / 3D</div></div></div>
+      <div class="tile rv d2" href="/landscape-wildlife/"><div class="imgwrap"><img src="/images/tile-landwild.jpg" alt="Landscape and wildlife fine art photography"></div><div class="go">View →</div><div class="lbl"><div class="t">Landscape &amp; Wildlife</div><div class="s">Fine Art</div></div></div>
     </div>
 
     <div class="grouplbl rv"><span class="eyebrow">Video</span></div>
     <div class="srow">
-      <div class="tile rv" onclick="go('video')"><div class="imgwrap"><img src="images/tile-event.jpg" alt="Event film and videography, cinematic still"></div><div class="go">View →</div><div class="lbl"><div class="t">Event Film</div><div class="s">Video</div></div></div>
-      <div class="tile rv d1" onclick="go('video')"><div class="imgwrap"><img src="images/tile-marketing.jpg" alt="Marketing video and brand photography"></div><div class="go">View →</div><div class="lbl"><div class="t">Marketing Video</div><div class="s">Business</div></div></div>
+      <div class="tile rv" href="/video/"><div class="imgwrap"><img src="/images/tile-event.jpg" alt="Event film and videography, cinematic still"></div><div class="go">View →</div><div class="lbl"><div class="t">Event Film</div><div class="s">Video</div></div></div>
+      <div class="tile rv d1" href="/video/"><div class="imgwrap"><img src="/images/tile-marketing.jpg" alt="Marketing video and brand photography"></div><div class="go">View →</div><div class="lbl"><div class="t">Marketing Video</div><div class="s">Business</div></div></div>
     </div>
   </div></section>
 
@@ -342,7 +337,7 @@ footer a:hover{color:var(--paper);}
     <div class="sec-head ctr rv">
       <span class="eyebrow">Selected work</span>
       <h2>The <span class="it">portfolio.</span></h2>
-      <p>Filter by service line.</p>
+      <p>Filter by service line, or <a href="/portfolio/" style="color:var(--brass);text-decoration:underline">see the full portfolio</a>.</p>
     </div>
     <div class="filters rv">
       <button class="chip active" data-f="all">All</button>
@@ -352,25 +347,25 @@ footer a:hover{color:var(--paper);}
       <button class="chip" data-f="video">Video</button>
     </div>
     <div class="gallery" id="gallery">
-      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="images/gallery-portrait-1.jpg" alt="Portrait photography, first birthday cake smash session"></div><div class="cap">Portrait</div></div>
-      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-landwild-1.jpg" alt="Landscape photography, red rock desert road"></div><div class="cap">Landscape</div></div>
-      <div class="gitem" data-cat="realestate"><div class="imgwrap"><img src="images/gallery-realestate-1.jpg" alt="Architectural photography, modern pavilion structure"></div><div class="cap">Real Estate</div></div>
-      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-wildlife-1.jpg" alt="Wildlife and pet photography, coastal bluff"></div><div class="cap">Wildlife</div></div>
-      <div class="gitem" data-cat="video"><div class="imgwrap"><img src="images/gallery-video-1.jpg" alt="Film and video photography, golden hour portrait"></div><div class="cap">Video</div></div>
-      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="images/gallery-portrait-2.jpg" alt="Portrait photography, family with baby"></div><div class="cap">Portrait</div></div>
-      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-landwild-2.jpg" alt="Landscape photography, Washington State ferry"></div><div class="cap">Landscape</div></div>
-      <div class="gitem" data-cat="realestate"><div class="imgwrap"><img src="images/gallery-realestate-2.jpg" alt="Urban architecture and city skyline photography"></div><div class="cap">Real Estate</div></div>
-      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-wildlife-2.jpg" alt="Wildlife photography, elephant at sunset"></div><div class="cap">Wildlife</div></div>
-      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="images/gallery-portrait-3.jpg" alt="Portrait photography, studio session"></div><div class="cap">Portrait</div></div>
-      <div class="gitem" data-cat="video"><div class="imgwrap"><img src="images/gallery-video-2.jpg" alt="Event film photography, cinematic portrait"></div><div class="cap">Video</div></div>
-      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="images/gallery-landwild-3.jpg" alt="Wildlife photography, bighorn sheep"></div><div class="cap">Landscape</div></div>
+      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="/images/gallery-portrait-1.jpg" alt="Portrait photography, first birthday cake smash session"></div><div class="cap">Portrait</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="/images/gallery-landwild-1.jpg" alt="Landscape photography, red rock desert road"></div><div class="cap">Landscape</div></div>
+      <div class="gitem" data-cat="realestate"><div class="imgwrap"><img src="/images/gallery-realestate-1.jpg" alt="Architectural photography, modern pavilion structure"></div><div class="cap">Real Estate</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="/images/gallery-wildlife-1.jpg" alt="Wildlife and pet photography, coastal bluff"></div><div class="cap">Wildlife</div></div>
+      <div class="gitem" data-cat="video"><div class="imgwrap"><img src="/images/gallery-video-1.jpg" alt="Film and video photography, golden hour portrait"></div><div class="cap">Video</div></div>
+      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="/images/gallery-portrait-2.jpg" alt="Portrait photography, family with baby"></div><div class="cap">Portrait</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="/images/gallery-landwild-2.jpg" alt="Landscape photography, Washington State ferry"></div><div class="cap">Landscape</div></div>
+      <div class="gitem" data-cat="realestate"><div class="imgwrap"><img src="/images/gallery-realestate-2.jpg" alt="Urban architecture and city skyline photography"></div><div class="cap">Real Estate</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="/images/gallery-wildlife-2.jpg" alt="Wildlife photography, elephant at sunset"></div><div class="cap">Wildlife</div></div>
+      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="/images/gallery-portrait-3.jpg" alt="Portrait photography, studio session"></div><div class="cap">Portrait</div></div>
+      <div class="gitem" data-cat="video"><div class="imgwrap"><img src="/images/gallery-video-2.jpg" alt="Event film photography, cinematic portrait"></div><div class="cap">Video</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="/images/gallery-landwild-3.jpg" alt="Wildlife photography, bighorn sheep"></div><div class="cap">Landscape</div></div>
     </div>
   </div></section>
 
   <!-- PITCH + STATS -->
   <section style="padding-top:20px"><div class="wrap"><div class="pitch rv">
     <div class="pitch-grid">
-      <div class="pitch-photo"><img src="images/about-me.jpg" alt="Spencer Townley, Puget Sound photographer and filmmaker"></div>
+      <div class="pitch-photo"><img src="/images/about-me.jpg" alt="Spencer Townley, Puget Sound photographer and filmmaker"></div>
       <div>
         <span class="eyebrow" style="color:var(--brass)">Who's behind it</span>
         <h2 style="margin-top:16px">Ten years, dozens of clients from individuals to Fortune 500s, one region known by heart.</h2>
@@ -399,555 +394,99 @@ footer a:hover{color:var(--paper);}
   <section id="journal" style="padding-top:20px"><div class="wrap">
     <div class="sec-head ctr rv"><span class="eyebrow">From the journal</span><h2>Recent <span class="it">shoots &amp; notes.</span></h2></div>
     <div class="jgrid" id="jgridHome"></div>
-    <div style="margin-top:30px;text-align:center"><a class="btn btn-ghost" onclick="go('journal')">Read the journal</a></div>
+    <div style="margin-top:30px;text-align:center"><a class="btn btn-ghost" href="/journal/">Read the journal</a></div>
   </div></section>
 
   <!-- BOOKING BAND -->
   <section style="padding-top:20px"><div class="wrap"><div class="band rv">
     <h2>Let's make <span class="it">something good.</span></h2>
     <p>Check live availability and book your session: portraits, property, or film.</p>
-    <a class="btn btn-brass">Check availability</a>
+    <a class="btn btn-brass" href="/book/">Check availability</a>
   </div></div></section>
 
-</div>
 
-<!-- ============ PORTRAIT LANDING ============ -->
-<div class="page" id="page-portrait">
-  <section class="lp-hero">
-    <div class="imgwrap"><img src="images/portrait-hero.jpg" alt="Family portrait session on a Puget Sound beach"></div>
-    <div class="veil"></div>
-    <div class="wrap inner">
-      <div class="eyebrow" style="color:var(--brass)">Portrait Photography · Puget Sound</div>
-      <h1 style="margin-top:16px">Portraits that <span style="font-style:italic">actually look like you.</span></h1>
-      <p>Relaxed, warm sessions for families, seniors, couples, and individuals, delivered fast, in a gallery you'll be proud to share.</p>
-      <a class="btn btn-brass">Book your session</a>
-    </div>
-  </section>
-
-  <section><div class="wrap">
-    <div class="backhome" onclick="go('home')">← Back to home</div>
-    <div class="sec-head rv"><span class="eyebrow">Who it's for</span><h2>For the moments <span class="it">worth keeping.</span></h2>
-      <p>Whether it's a growing family, a graduating senior, a couple, or a headshot that needs to work harder than a phone selfie, the approach is the same: put you at ease, chase good light, and hand back images that feel true.</p></div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="sec-head ctr rv"><span class="eyebrow">A few frames</span><h2>Recent <span class="it">portraits.</span></h2></div>
-    <div class="gallery">
-      <div class="gitem"><div class="imgwrap"><img src="images/portrait-1.jpg" alt="Professional headshot, outdoor waterfront"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/portrait-2.jpg" alt="Professional headshot portrait"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/portrait-3.jpg" alt="Professional headshot portrait"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/portrait-4.jpg" alt="Baby milestone portrait session"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/portrait-5.jpg" alt="Baby portrait, natural light"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/portrait-6.jpg" alt="Father and baby portrait"></div></div>
-    </div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="sec-head ctr rv"><span class="eyebrow">Packages</span><h2>Simple, honest <span class="it">tiers.</span></h2><p>Mid-market pricing: above the hobbyists, below the luxury studios.</p></div>
-    <div class="pkgs">
-      <div class="pkg rv"><div class="tag">Mini</div><div class="pr">$250</div>
-        <ul><li>30 minutes, one location</li><li>10 edited digital images</li><li>Private online gallery</li><li>Print release</li></ul>
-        <a class="btn btn-ghost" style="width:100%;text-align:center">Book Mini</a></div>
-      <div class="pkg feat rv d1"><div class="tag">Signature · Most popular</div><div class="pr">$450</div>
-        <ul><li>60 minutes, 1 to 2 looks</li><li>30 edited digital images</li><li>Private gallery + print release</li><li>Location guidance</li></ul>
-        <a class="btn btn-brass" style="width:100%;text-align:center">Book Signature</a></div>
-      <div class="pkg rv d2"><div class="tag">Full Experience</div><div class="pr">$700</div>
-        <ul><li>2 hours, multiple looks/locations</li><li>60 edited images</li><li>$75 print credit + wardrobe consult</li><li>Priority scheduling</li></ul>
-        <a class="btn btn-ghost" style="width:100%;text-align:center">Book Full</a></div>
-    </div>
-    <p style="text-align:center;margin-top:18px;font-size:13px;color:var(--mut)">Add-ons: extra edited image $20 · travel beyond 30 mi</p>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="sec-head ctr rv"><span class="eyebrow">How it works</span><h2>Four easy <span class="it">steps.</span></h2></div>
-    <div class="steps">
-      <div class="step rv"><div class="no">01</div><h3>Inquire</h3><p>Pick a package and check live availability online.</p></div>
-      <div class="step rv d1"><div class="no">02</div><h3>Plan</h3><p>We lock a date, location, and look. I'll guide wardrobe.</p></div>
-      <div class="step rv d2"><div class="no">03</div><h3>Shoot</h3><p>A relaxed, unrushed session focused on real moments.</p></div>
-      <div class="step rv d3"><div class="no">04</div><h3>Deliver</h3><p>A private gallery, professionally edited, ready to share.</p></div>
-    </div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="sec-head ctr rv"><span class="eyebrow">Good to know</span><h2>Questions, <span class="it">answered.</span></h2></div>
-    <div class="faq">
-      <div class="qa"><div class="q">What areas do you serve?<span>+</span></div><div class="a">All of Puget Sound: Seattle, Tacoma, Bellevue, Everett, Kitsap and surrounding communities. Travel beyond 30 miles adds a small fee.</div></div>
-      <div class="qa"><div class="q">How soon will I get my photos?<span>+</span></div><div class="a">Standard delivery is 48 hours via a private online gallery. Video projects run about one week.</div></div>
-      <div class="qa"><div class="q">Do I get print rights?<span>+</span></div><div class="a">Yes, every package includes a print release so you can print your images wherever you like, or order through the gallery.</div></div>
-      <div class="qa"><div class="q">What should we wear?<span>+</span></div><div class="a">I'll send guidance once we book. The Signature and Full packages include wardrobe/location planning to make it easy.</div></div>
-    </div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap"><div class="band rv">
-    <h2>Ready when <span class="it">you are.</span></h2>
-    <p>Book a portrait session and check live availability.</p>
-    <a class="btn btn-brass">Book a session</a>
-  </div></div></section>
-</div>
-
-<!-- ============ REAL ESTATE LANDING ============ -->
-<div class="page" id="page-realestate">
-  <section class="lp-hero">
-    <div class="imgwrap"><img src="images/realestate-hero.jpg" alt="Modern building exterior, real estate and architecture photography"></div>
-    <div class="veil"></div>
-    <div class="wrap inner">
-      <div class="eyebrow" style="color:var(--brass)">Real Estate Photography · Puget Sound</div>
-      <h1 style="margin-top:16px">Listing photos that <span style="font-style:italic">move properties.</span></h1>
-      <p>HDR photography, drone aerials, and 3D tours for agents who need next-day, MLS-ready galleries.</p>
-      <a class="btn btn-brass">Check availability</a>
-    </div>
-  </section>
-
-  <section><div class="wrap">
-    <div class="backhome" onclick="go('home')">← Back to home</div>
-    <div class="sec-head rv"><span class="eyebrow">Who it's for</span><h2>Listings that <span class="it">sell themselves.</span></h2>
-      <p>Realtors and homeowners who need photos that do the selling before a buyer ever walks in. Fast turnaround, FAA Part 107 licensed drone work, and a gallery built to make a listing stand out in a crowded feed.</p></div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="sec-head ctr rv"><span class="eyebrow">Recent work</span><h2>A few <span class="it">listings.</span></h2></div>
-    <div class="gallery">
-      <div class="gitem"><div class="imgwrap"><img src="images/tile-realestate.jpg" alt="Real estate photography, glass high-rise architectural detail"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/gallery-realestate-1.jpg" alt="Architectural photography, modern pavilion structure"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/gallery-realestate-2.jpg" alt="Urban architecture and city skyline photography"></div></div>
-    </div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="sec-head ctr rv"><span class="eyebrow">Packages</span><h2>Simple, honest <span class="it">tiers.</span></h2><p>Mid-market pricing: above the hobbyists, below the luxury studios.</p></div>
-    <div class="pkgs">
-      <div class="pkg rv"><div class="tag">Essential · Under 2,000 sqft</div><div class="pr">$200</div>
-        <ul><li>25 HDR photos</li><li>Branded web gallery</li><li>Next-day delivery</li></ul>
-        <a class="btn btn-ghost" style="width:100%;text-align:center">Book Essential</a></div>
-      <div class="pkg feat rv d1"><div class="tag">Standard · 2,000-3,500 sqft</div><div class="pr">$325</div>
-        <ul><li>40 HDR photos</li><li>10 drone aerials (Part 107)</li><li>Twilight option</li><li>Next-day delivery</li></ul>
-        <a class="btn btn-brass" style="width:100%;text-align:center">Book Standard</a></div>
-      <div class="pkg rv d2"><div class="tag">Premium · 3,500+ sqft</div><div class="pr">$500</div>
-        <ul><li>50+ HDR photos + drone</li><li>Matterport 3D tour</li><li>Walkthrough video + floor plan</li><li>Agent-branded delivery</li></ul>
-        <a class="btn btn-ghost" style="width:100%;text-align:center">Book Premium</a></div>
-    </div>
-    <p style="text-align:center;margin-top:18px;font-size:13px;color:var(--mut)">Add-ons: same-day rush $75 · twilight $100 · virtual staging $25/img · Matterport $275</p>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="sec-head ctr rv"><span class="eyebrow">How it works</span><h2>Four easy <span class="it">steps.</span></h2></div>
-    <div class="steps">
-      <div class="step rv"><div class="no">01</div><h3>Inquire</h3><p>Share the address, square footage, and when you need photos by.</p></div>
-      <div class="step rv d1"><div class="no">02</div><h3>Schedule</h3><p>We lock a shoot time, ideally once staging is finished.</p></div>
-      <div class="step rv d2"><div class="no">03</div><h3>Shoot</h3><p>HDR photos, drone aerials, and any add-ons like twilight or a 3D tour.</p></div>
-      <div class="step rv d3"><div class="no">04</div><h3>Deliver</h3><p>An MLS-ready gallery in your inbox the next business day.</p></div>
-    </div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="sec-head ctr rv"><span class="eyebrow">Good to know</span><h2>Questions, <span class="it">answered.</span></h2></div>
-    <div class="faq">
-      <div class="qa"><div class="q">How fast do I get my photos?<span>+</span></div><div class="a">Next business day for the standard turnaround. Same-day rush delivery is available for $75.</div></div>
-      <div class="qa"><div class="q">Are you licensed to fly a drone?<span>+</span></div><div class="a">Yes, FAA Part 107 licensed for all aerial work, required for any paid drone photography.</div></div>
-      <div class="qa"><div class="q">Do you offer twilight photos?<span>+</span></div><div class="a">Yes, twilight and dusk shoots are available as an add-on, and included in the Standard and Premium packages.</div></div>
-      <div class="qa"><div class="q">What should I do before the shoot?<span>+</span></div><div class="a">Basic decluttering and turning on all interior lights. A full prep checklist is sent once you book.</div></div>
-    </div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap"><div class="band rv">
-    <h2>Ready to <span class="it">list?</span></h2>
-    <p>Check live availability and get your listing photographed fast.</p>
-    <a class="btn btn-brass">Check availability</a>
-  </div></div></section>
-</div>
-
-<!-- ============ LANDSCAPE & WILDLIFE LANDING ============ -->
-<div class="page" id="page-landwild">
-  <section class="lp-hero">
-    <div class="imgwrap"><img src="images/landwild-hero.jpg" alt="Fine art landscape photography, red rock canyon"></div>
-    <div class="veil"></div>
-    <div class="wrap inner">
-      <div class="eyebrow" style="color:var(--brass)">Landscape &amp; Wildlife · Fine Art</div>
-      <h1 style="margin-top:16px">Fine art for the <span style="font-style:italic">wild and the quiet.</span></h1>
-      <p>Museum-quality prints and licensable images from a decade behind the lens, in the Pacific Northwest and beyond.</p>
-      <a class="btn btn-brass">Check availability</a>
-    </div>
-  </section>
-
-  <section><div class="wrap">
-    <div class="backhome" onclick="go('home')">← Back to home</div>
-    <div class="sec-head rv"><span class="eyebrow">Who it's for</span><h2>Collectors, <span class="it">brands, and anyone chasing good light.</span></h2>
-      <p>For a wall that needs one honest piece, or a brand that needs a licensed image done right. Every print is museum quality and lab-fulfilled; every license is straightforward, no exclusivity games unless you want them.</p></div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="sec-head ctr rv"><span class="eyebrow">Recent work</span><h2>A few <span class="it">frames.</span></h2></div>
-    <div class="gallery">
-      <div class="gitem"><div class="imgwrap"><img src="images/tile-landwild.jpg" alt="Fine art landscape photography, autumn aspen trees"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/gallery-landwild-1.jpg" alt="Landscape photography, red rock desert road"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/gallery-landwild-2.jpg" alt="Landscape photography, Washington State ferry"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="images/gallery-landwild-3.jpg" alt="Wildlife photography, bighorn sheep"></div></div>
-    </div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="sec-head ctr rv"><span class="eyebrow">Packages</span><h2>Simple, honest <span class="it">tiers.</span></h2><p>Prints ship lab-fulfilled; licenses delivered hi-res, straight to your inbox.</p></div>
-    <div class="pkgs">
-      <div class="pkg rv"><div class="tag">Open-Edition Print</div><div class="pr">$95</div>
-        <ul><li>8x12, 16x24, or 24x36</li><li>Museum-quality, lab-fulfilled</li><li>Signed on request</li></ul>
-        <a class="btn btn-ghost" style="width:100%;text-align:center">Book Open Edition</a></div>
-      <div class="pkg feat rv d1"><div class="tag">Limited-Edition Signed · Ed. of 50</div><div class="pr">$350</div>
-        <ul><li>Signed &amp; numbered print</li><li>Certificate of authenticity</li><li>16x24 or 24x36</li></ul>
-        <a class="btn btn-brass" style="width:100%;text-align:center">Book Limited Edition</a></div>
-      <div class="pkg rv d2"><div class="tag">Commercial License · Per image</div><div class="pr">$300</div>
-        <ul><li>Web + print usage</li><li>1 year, non-exclusive</li><li>Hi-res digital delivery</li></ul>
-        <a class="btn btn-ghost" style="width:100%;text-align:center">Book Commercial License</a></div>
-    </div>
-    <p style="text-align:center;margin-top:18px;font-size:13px;color:var(--mut)">Add-ons: custom framing $60-180 · exclusive/buyout licensing available · international shipping</p>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="sec-head ctr rv"><span class="eyebrow">How it works</span><h2>Four easy <span class="it">steps.</span></h2></div>
-    <div class="steps">
-      <div class="step rv"><div class="no">01</div><h3>Browse</h3><p>Explore the gallery and find the piece that fits your space.</p></div>
-      <div class="step rv d1"><div class="no">02</div><h3>Choose</h3><p>Pick your size, edition, or licensing terms.</p></div>
-      <div class="step rv d2"><div class="no">03</div><h3>Order</h3><p>We print and ship, or finalize your license agreement.</p></div>
-      <div class="step rv d3"><div class="no">04</div><h3>Enjoy</h3><p>A museum-quality print at your door, or usage rights in hand.</p></div>
-    </div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="sec-head ctr rv"><span class="eyebrow">Good to know</span><h2>Questions, <span class="it">answered.</span></h2></div>
-    <div class="faq">
-      <div class="qa"><div class="q">What sizes are available?<span>+</span></div><div class="a">8x12, 16x24, and 24x36 for most images, with larger sizes available on request.</div></div>
-      <div class="qa"><div class="q">Can I license an image for commercial use?<span>+</span></div><div class="a">Yes, standard licenses cover web and print use for one year, non-exclusive. Extended or exclusive terms are available.</div></div>
-      <div class="qa"><div class="q">Do you offer custom framing?<span>+</span></div><div class="a">Yes, framing add-ons run $60 to $180 depending on size.</div></div>
-      <div class="qa"><div class="q">Can I commission a custom landscape or wildlife shoot?<span>+</span></div><div class="a">Yes, reach out through the inquiry form with your idea and location and we'll go from there.</div></div>
-    </div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap"><div class="band rv">
-    <h2>Bring the Sound <span class="it">home.</span></h2>
-    <p>Shop prints or request a commercial license.</p>
-    <a class="btn btn-brass">Check availability</a>
-  </div></div></section>
-</div>
-
-<!-- ============ VIDEO LANDING (scroll hero) ============ -->
-<div class="page" id="page-video">
-  <div class="v-hud"><i id="vhudbar"></i></div>
-  <div class="v-phase" id="vphase">
-    <span data-k="0">Orbit</span><span data-k="1">Viewfinder</span><span data-k="2">Flash</span><span data-k="3">Reveal</span>
-  </div>
-
-  <div class="v-scrollzone" id="vzone">
-    <div class="v-stage">
-      <!-- Your clip, scrubbed by scroll position: it drives the whole orbit, push-in, and flash.
-           camera-scroll.mp4 must sit in the same folder as this HTML to load. -->
-      <video class="v-scrubvid" id="vscrub" src="camera-scroll.mp4" muted playsinline preload="auto"></video>
-      <div class="v-downarrow" id="varrow" aria-hidden="true"><svg width="20" height="38" viewBox="0 0 20 38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="2" x2="10" y2="31"/><path d="M3 24l7 7 7-7"/></svg></div>
-      <!-- (B) FULLSCREEN REVEAL: fades in over the white tail of the clip.
-           Swap .v-fauxvid for your final clip: <video src="hero.mp4" autoplay muted loop playsinline></video> -->
-      <div class="v-hero" id="vhero">
-        <div class="v-fauxvid"></div>
-        <div class="v-cap">
-          <div class="v-vidchip"><span class="dot"></span>▶ Reveal video: your Puget Sound clip goes here</div>
-          <h2>Puget Sound, <span class="it">in motion.</span></h2>
-        </div>
-        <div class="v-playbar"><i></i></div>
-      </div>
-    </div>
-  </div>
-
-  <section class="v-after">
-    <div class="eyebrow">Event Film · Marketing Video</div>
-    <h2>Film that <span style="font-style:italic">moves people.</span></h2>
-    <p>Highlight films, brand stories, and social cutdowns across the Puget Sound region: cinematic, dependable, and delivered on time.</p>
-    <a class="btn btn-brass" style="border-color:var(--brass)">Book a video project</a>
-    <div class="v-note">
-      <strong>Now wired:</strong> your <code>camera-scroll.mp4</code> clip is scrubbed by scroll position, driving the whole orbit, push-in, and flash. The clip must stay in the same folder as this HTML to load.
-      <strong>Still a placeholder (B):</strong> the fullscreen reveal after the white flash. Swap <code>.v-fauxvid</code> for your final clip: <code>&lt;video src="hero.mp4" autoplay muted loop playsinline&gt;</code>.
-      On Wix Studio this page goes in a custom-code embed (higher-tier plan) with the MP4 hosted on your site; it is dependency-free vanilla JS so it drops right in.
-    </div>
-  </section>
-</div>
-
-<!-- ============ INQUIRY / INTAKE ============ -->
-<div class="page" id="page-inquire">
-  <section class="inq-hero"><div class="wrap">
-    <div class="backhome" onclick="go('home')">← Back to home</div>
-    <div class="inq-wrap">
-      <div class="inq-side">
-        <span class="eyebrow">Start a project</span>
-        <h1>Tell me about<br><span class="it">your shoot.</span></h1>
-        <p>A few details help me confirm availability, scope, and a fair quote before we lock anything in. No obligation.</p>
-        <div class="inq-steps">
-          <div class="s"><div class="n">01</div><div class="t"><strong>You share the basics.</strong> The form takes about a minute.</div></div>
-          <div class="s"><div class="n">02</div><div class="t"><strong>I reply within 1-2 business days</strong> with availability, options, and a quote.</div></div>
-          <div class="s"><div class="n">03</div><div class="t"><strong>We confirm and book.</strong> A deposit holds your date.</div></div>
-        </div>
-      </div>
-      <div>
-        <form class="form" id="inqForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="return submitInquiry(event)">
-          <div class="row">
-            <div class="field"><label>Full name <span class="req">*</span></label><input required name="name" id="inqName" placeholder="Your name"></div>
-            <div class="field"><label>Email <span class="req">*</span></label><input required type="email" name="email" placeholder="you@email.com"></div>
-          </div>
-          <div class="row">
-            <div class="field"><label>Phone</label><input name="phone" placeholder="(206) 555-0123"></div>
-            <div class="field"><label>Service <span class="req">*</span></label>
-              <select required id="inqService" name="service">
-                <option value="">Choose one</option>
-                <option>Portrait</option>
-                <option>Real Estate</option>
-                <option>Event Video</option>
-                <option>Marketing Video</option>
-                <option>Landscape &amp; Wildlife / Prints</option>
-                <option>Not sure yet</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="field"><label>Preferred date</label><input type="date" name="date"></div>
-            <div class="field"><label>Location / city</label><input name="location" placeholder="Seattle, Tacoma, Everett…"></div>
-          </div>
-          <div class="row">
-            <div class="field"><label>People, property size, or event length</label><input name="scope" placeholder="e.g. family of 5 / 2,400 sq ft / 3-hr event"></div>
-            <div class="field"><label>Budget range</label>
-              <select name="budget">
-                <option value="">Select</option>
-                <option>Under $500</option>
-                <option>$500 to $1,000</option>
-                <option>$1,000 to $2,500</option>
-                <option>$2,500 to $5,000</option>
-                <option>$5,000+</option>
-                <option>Not sure yet</option>
-              </select>
-            </div>
-          </div>
-          <div class="field"><label>Tell me about your shoot</label><textarea name="details" placeholder="What are you looking for? Vibe, must-have shots, deadlines, anything helpful."></textarea></div>
-          <div class="field"><label>How did you hear about me?</label><input name="referral" placeholder="Instagram, a friend, Google…"></div>
-          <input type="hidden" name="_subject" value="New inquiry from townleyphotography.com">
-          <button type="submit" class="btn btn-brass" id="inqSubmitBtn" style="width:100%;text-align:center;border:none;margin-top:4px;">Send inquiry</button>
-          <div class="sub">No obligation. I'll only use your details to reply about your shoot.</div>
-        </form>
-        <div class="inq-done" id="inqDone" style="display:none">
-          <h3 id="inqThanks">Thanks!</h3>
-          <p id="inqThanksBody">I'll review your details and get back to you within 1-2 business days to confirm availability and next steps.</p>
-        </div>
-        <div class="inq-note">This form emails inquiries straight to Spencer via Formspree.</div>
-      </div>
-    </div>
-  </div></section>
-</div>
-
-<!-- ============ JOURNAL ============ -->
-<div class="page" id="page-journal">
-  <section class="inq-hero"><div class="wrap">
-    <div class="backhome" onclick="go('home')">← Back to home</div>
-    <div class="sec-head rv"><span class="eyebrow">The Journal</span><h2>Notes <span class="it">from the field.</span></h2>
-      <p>Behind-the-scenes notes from real sessions around the Puget Sound: locations, light, and what actually worked.</p></div>
-  </div></section>
-
-  <section style="padding-top:0"><div class="wrap">
-    <div class="jgrid" id="jgridAll"></div>
-  </div></section>
-
-  <section style="padding-top:20px"><div class="wrap"><div class="band rv">
-    <h2>Have a shoot in <span class="it">mind?</span></h2>
-    <p>Check live availability and book your session: portraits, property, or film.</p>
-    <a class="btn btn-brass">Check availability</a>
-  </div></div></section>
-</div>
-
-<!-- FOOTER -->
 <footer><div class="wrap">
   <div class="fgrid">
     <div>
       <div class="wm">Townley</div>
       <p style="margin-top:10px;font-size:14px;max-width:34ch;">Professional photography and film across the Puget Sound region. Credible, dependable, fairly priced.</p>
     </div>
-    <div><h4>Services</h4><a onclick="go('portrait')">Portraits</a><a onclick="go('realestate')">Real Estate</a><a onclick="go('video')">Video</a><a onclick="go('landwild')">Landscape &amp; Wildlife</a></div>
-    <div><h4>Studio</h4><a onclick="go('home');jump('work')">Work</a><a onclick="go('home')">About</a><a onclick="go('journal')">Journal</a><a class="foot-inq">Contact</a><a class="foot-inq">Book</a></div>
+    <div><h4>Services</h4><a href="/portrait/">Portraits</a><a href="/real-estate/">Real Estate</a><a href="/video/">Video</a><a href="/landscape-wildlife/">Landscape &amp; Wildlife</a></div>
+    <div><h4>Studio</h4><a href="/portfolio/">Portfolio</a><a href="/journal/">Journal</a><a href="/book/">Contact</a><a href="/book/">Book</a></div>
     <div class="news"><h4>Newsletter</h4>
       <p style="font-size:13px;margin-bottom:12px;">Location guides and seasonal offers. No spam.</p>
       <input placeholder="you@email.com"><a class="btn btn-brass" style="width:100%;text-align:center">Subscribe</a>
     </div>
   </div>
   <div class="fbot">
-    <div>© 2026 Townley Photography · Part of Townley Creative</div>
-    <div>@townley_photography · @spencertownley · Privacy · Licensing</div>
+    <div>&copy; 2026 Townley Photography &middot; Part of Townley Creative</div>
+    <div>@townley_photography &middot; @spencertownley &middot; Privacy &middot; Licensing</div>
   </div>
 </div></footer>
 
 <script>
+
 const nav=document.getElementById('nav');
 addEventListener('scroll',onScroll,{passive:true});
-function onScroll(){nav.classList.toggle('scrolled',scrollY>60); vMeasure();}
+function onScroll(){nav.classList.toggle('scrolled',scrollY>60); if(window.vMeasure)vMeasure();}
 
-/* ---- JOURNAL / BLOG ----
-   Add a new post by adding one object to POSTS (newest or oldest, order doesn't matter,
-   it's sorted by date). The home page always shows the 3 most recent; the Journal page
-   shows all of them. Everything else updates itself. */
 const POSTS=[
-  {date:'2026-05-12', cat:'Marketing Video', month:'May', title:'How Much Should a Small Business Budget for a Brand Video?', excerpt:'Real ranges, what moves the price, and where a small budget goes furthest.', img:'https://picsum.photos/seed/j19/600/400', slug:'small-business-brand-video-budget'},
-  {date:'2026-05-21', cat:'Marketing Video', month:'May', title:'What Makes a Marketing Video Actually Convert, Not Just Look Good', excerpt:'The first five seconds, the one clear ask, and why pretty footage is not a strategy.', img:'https://picsum.photos/seed/j20/600/400', slug:'marketing-video-convert-not-just-look-good'},
-  {date:'2026-05-29', cat:'Marketing Video', month:'May', title:'Case-Study-Style Video: Why It Outperforms a Traditional Ad', excerpt:'A customer telling the truth beats an actor reading a script. Here is why it works.', img:'https://picsum.photos/seed/j21/600/400', slug:'case-study-video-outperforms-traditional-ad'},
-  {date:'2026-06-09', cat:'About', month:'Jun', title:"Meet Spencer Townley: A Puget Sound Photographer's Story", excerpt:'Disposable cameras at the zoo, Gonzaga commercials, and how it became this business.', img:'https://picsum.photos/seed/j22/600/400', slug:'meet-spencer-townley-puget-sound-photographer'},
-  {date:'2026-06-18', cat:'About', month:'Jun', title:'Why Hire a Local Photographer Instead of a National Marketplace', excerpt:'Marketplaces sell convenience. A local photographer sells knowing the light here.', img:'https://picsum.photos/seed/j23/600/400', slug:'local-photographer-vs-national-marketplace'},
-  {date:'2026-07-23', cat:'FAQ', month:'Jul', title:'Frequently Asked Questions About Booking a Session', excerpt:'Deposits, turnaround, travel, weather, and what happens after you hit send.', img:'https://picsum.photos/seed/j24/600/400', slug:'booking-faq-townley-photography'},
-  {date:'2026-07-28', cat:'FAQ', month:'Jul', title:'What Insurance and Licensing You Should Expect From a Professional Photographer', excerpt:'Liability coverage, drone certification, contracts, and the questions worth asking.', img:'https://picsum.photos/seed/j25/600/400', slug:'photographer-insurance-licensing-what-to-expect'},
-  {date:'2026-07-31', cat:'General', month:'Jul', title:'A Season-by-Season Guide to Photography in the Pacific Northwest', excerpt:'What each season here actually gives a camera, and how to plan around it.', img:'https://picsum.photos/seed/j26/600/400', slug:'season-by-season-guide-photography-pacific-northwest'},
-  {date:'2026-08-03', cat:'Basics', month:'Aug', title:'The Basics of Photography', excerpt:'Aperture, shutter speed, ISO, and light, explained in the order that actually helps.', img:'https://picsum.photos/seed/j27/600/400', slug:'the-basics-of-photography'},
-  {date:'2026-08-04', cat:'Basics', month:'Aug', title:'How to Start Photography', excerpt:'Use the camera you own, on purpose, every day for a month. Gear can wait.', img:'https://picsum.photos/seed/j28/600/400', slug:'how-to-start-photography'},
-  {date:'2026-03-10', cat:'Landscape', month:'Mar', title:'How to License Landscape Photography for Commercial Use', excerpt:'Rights, usage, and what a license actually buys. A plain-language guide for brands.', img:'https://picsum.photos/seed/j14/600/400', slug:'license-landscape-photography-commercial-use'},
-  {date:'2026-03-24', cat:'Landscape', month:'Mar', title:'What Makes a Landscape Photo Worth Printing Large', excerpt:'Resolution is the least of it. What separates a wall print from a scroll-past.', img:'https://picsum.photos/seed/j15/600/400', slug:'landscape-photo-worth-printing-large'},
-  {date:'2026-04-07', cat:'Wildlife', month:'Apr', title:"How a Telephoto Lens Changes What's Possible in Wildlife Photography", excerpt:'Distance is the whole game. What real reach means for the animals and the photos.', img:'https://picsum.photos/seed/j16/600/400', slug:'telephoto-lens-wildlife-photography'},
-  {date:'2026-04-16', cat:'Event Video', month:'Apr', title:'What to Look for in an Event Videographer in Seattle', excerpt:'The questions worth asking before you book, and the answers that actually matter.', img:'https://picsum.photos/seed/j17/600/400', slug:'event-videographer-seattle-what-to-look-for'},
-  {date:'2026-04-28', cat:'Event Video', month:'Apr', title:'A Day in the Life: What an Event Videographer Actually Does on Site', excerpt:'From load-in to final cut. What you are actually paying for on event day.', img:'https://picsum.photos/seed/j18/600/400', slug:'event-videographer-day-on-site'},
-  {date:'2026-01-13', cat:'Real Estate', month:'Jan', title:'What to Expect During a Real Estate Photo Shoot: A Timeline for Agents', excerpt:'From arrival to delivered gallery in 48 hours. The whole process, minute by minute.', img:'https://picsum.photos/seed/j9/600/400', slug:'real-estate-photo-shoot-timeline-agents'},
-  {date:'2026-01-22', cat:'Real Estate', month:'Jan', title:'FAA Part 107, Explained: Why Your Real Estate Photographer Needs a Drone License', excerpt:'What the license covers, why Seattle airspace makes it non-negotiable, and how to check for one.', img:'https://picsum.photos/seed/j10/600/400', slug:'faa-part-107-real-estate-drone-license'},
-  {date:'2026-02-03', cat:'Real Estate', month:'Feb', title:'How to Prep a Home for Photos Before the Photographer Arrives', excerpt:'A room-by-room checklist that makes the difference between fine photos and great ones.', img:'https://picsum.photos/seed/j11/600/400', slug:'prep-home-for-real-estate-photos'},
-  {date:'2026-02-12', cat:'Real Estate', month:'Feb', title:'Real Estate Photography vs. 3D Virtual Tours: What Actually Sells Homes', excerpt:'Where photos win, where tours earn their keep, and why it usually is not either-or.', img:'https://picsum.photos/seed/j12/600/400', slug:'real-estate-photos-vs-3d-tours'},
-  {date:'2026-02-24', cat:'Real Estate', month:'Feb', title:'Why More Realtors in Seattle and Tacoma Are Hiring Professional Photographers', excerpt:'Phone cameras got good. Listings got competitive faster. What agents are actually buying.', img:'https://picsum.photos/seed/j13/600/400', slug:'why-realtors-seattle-tacoma-hire-professional-photographers'},
-  {date:'2026-07-08', cat:'Portraits', month:'Jul', title:'What to Wear for a Family Portrait Session in the Pacific Northwest', excerpt:'Layers, texture, and why nobody needs to match. A practical guide built for our weather.', img:'https://picsum.photos/seed/j4/600/400', slug:'what-to-wear-family-portraits-pacific-northwest'},
-  {date:'2026-07-10', cat:'Portraits', month:'Jul', title:'How Much Do Portrait Photographers Cost in Seattle? A Real Pricing Breakdown', excerpt:'Real numbers, from a $250 mini to a $700 full session, and what you actually get at each tier.', img:'https://picsum.photos/seed/j5/600/400', slug:'portrait-photographer-cost-seattle'},
-  {date:'2026-07-14', cat:'Portraits', month:'Jul', title:'Golden Hour in Seattle: When and Where to Shoot for the Best Light', excerpt:'When golden hour actually happens here, and the spots that make the most of it.', img:'https://picsum.photos/seed/j6/600/400', slug:'golden-hour-seattle-best-light'},
-  {date:'2026-07-17', cat:'Portraits', month:'Jul', title:'Best Spots for Couples Portraits in Seattle, Season by Season', excerpt:'Green Lake, Kerry Park, Lincoln Park, and when each one earns its place.', img:'https://picsum.photos/seed/j7/600/400', slug:'couples-portrait-spots-seattle'},
-  {date:'2026-07-20', cat:'Real Estate', month:'Jul', title:'Do Drone Photos Actually Help a Listing Sell Faster?', excerpt:'What aerials add to a listing, which properties benefit, and when they are not worth it.', img:'https://picsum.photos/seed/j8/600/400', slug:'do-drone-photos-help-listings-sell-faster'},
-  {date:'2026-07-05', cat:'Real Estate', month:'Jul', title:'Why drone shots sell homes faster', excerpt:'A Bainbridge listing, and what changed when we added aerials.', img:'images/journal-1.jpg', slug:'why-drone-shots-sell-homes-faster'},
-  {date:'2026-06-18', cat:'Portraits', month:'Jun', title:"The best senior-portrait spots in Seattle", excerpt:'Five locations that photograph beautifully in fall light.', img:'images/journal-2.jpg', slug:'best-senior-portrait-spots-seattle'},
-  {date:'2026-05-30', cat:'Landscape', month:'May', title:'Chasing storm light in the Cascades', excerpt:'Notes on shooting the moody weather most people wait out.', img:'images/journal-3.jpg', slug:'chasing-storm-light-cascades'}
+  {date:'2026-05-12', cat:'Marketing Video', month:'May', title:'How Much Should a Small Business Budget for a Brand Video?', excerpt:'Real ranges, what moves the price, and where a small budget goes furthest.', img:'images/journal/small-business-brand-video-budget.jpg', slug:'small-business-brand-video-budget'},
+  {date:'2026-05-21', cat:'Marketing Video', month:'May', title:'What Makes a Marketing Video Actually Convert, Not Just Look Good', excerpt:'The first five seconds, the one clear ask, and why pretty footage is not a strategy.', img:'images/journal/marketing-video-convert-not-just-look-good.jpg', slug:'marketing-video-convert-not-just-look-good'},
+  {date:'2026-05-29', cat:'Marketing Video', month:'May', title:'Case-Study-Style Video: Why It Outperforms a Traditional Ad', excerpt:'A customer telling the truth beats an actor reading a script. Here is why it works.', img:'images/journal/case-study-video-outperforms-traditional-ad.jpg', slug:'case-study-video-outperforms-traditional-ad'},
+  {date:'2026-06-09', cat:'About', month:'Jun', title:"Meet Spencer Townley: A Puget Sound Photographer's Story", excerpt:'Disposable cameras at the zoo, Gonzaga commercials, and how it became this business.', img:'images/journal/meet-spencer-townley-puget-sound-photographer.jpg', slug:'meet-spencer-townley-puget-sound-photographer'},
+  {date:'2026-06-18', cat:'About', month:'Jun', title:'Why Hire a Local Photographer Instead of a National Marketplace', excerpt:'Marketplaces sell convenience. A local photographer sells knowing the light here.', img:'images/journal/local-photographer-vs-national-marketplace.jpg', slug:'local-photographer-vs-national-marketplace'},
+  {date:'2026-07-23', cat:'FAQ', month:'Jul', title:'Frequently Asked Questions About Booking a Session', excerpt:'Deposits, turnaround, travel, weather, and what happens after you hit send.', img:'images/journal/booking-faq-townley-photography.jpg', slug:'booking-faq-townley-photography'},
+  {date:'2026-07-28', cat:'FAQ', month:'Jul', title:'What Insurance and Licensing You Should Expect From a Professional Photographer', excerpt:'Liability coverage, drone certification, contracts, and the questions worth asking.', img:'images/journal/photographer-insurance-licensing-what-to-expect.jpg', slug:'photographer-insurance-licensing-what-to-expect'},
+  {date:'2026-07-31', cat:'General', month:'Jul', title:'A Season-by-Season Guide to Photography in the Pacific Northwest', excerpt:'What each season here actually gives a camera, and how to plan around it.', img:'images/journal/season-by-season-guide-photography-pacific-northwest.jpg', slug:'season-by-season-guide-photography-pacific-northwest'},
+  {date:'2026-08-03', cat:'Basics', month:'Aug', title:'The Basics of Photography', excerpt:'Aperture, shutter speed, ISO, and light, explained in the order that actually helps.', img:'images/journal/the-basics-of-photography.jpg', slug:'the-basics-of-photography'},
+  {date:'2026-08-04', cat:'Basics', month:'Aug', title:'How to Start Photography', excerpt:'Use the camera you own, on purpose, every day for a month. Gear can wait.', img:'images/journal/how-to-start-photography.jpg', slug:'how-to-start-photography'},
+  {date:'2026-03-10', cat:'Landscape', month:'Mar', title:'How to License Landscape Photography for Commercial Use', excerpt:'Rights, usage, and what a license actually buys. A plain-language guide for brands.', img:'images/journal/license-landscape-photography-commercial-use.jpg', slug:'license-landscape-photography-commercial-use'},
+  {date:'2026-03-24', cat:'Landscape', month:'Mar', title:'What Makes a Landscape Photo Worth Printing Large', excerpt:'Resolution is the least of it. What separates a wall print from a scroll-past.', img:'images/journal/landscape-photo-worth-printing-large.jpg', slug:'landscape-photo-worth-printing-large'},
+  {date:'2026-04-07', cat:'Wildlife', month:'Apr', title:"How a Telephoto Lens Changes What's Possible in Wildlife Photography", excerpt:'Distance is the whole game. What real reach means for the animals and the photos.', img:'images/journal/telephoto-lens-wildlife-photography.jpg', slug:'telephoto-lens-wildlife-photography'},
+  {date:'2026-04-16', cat:'Event Video', month:'Apr', title:'What to Look for in an Event Videographer in Seattle', excerpt:'The questions worth asking before you book, and the answers that actually matter.', img:'images/journal/event-videographer-seattle-what-to-look-for.jpg', slug:'event-videographer-seattle-what-to-look-for'},
+  {date:'2026-04-28', cat:'Event Video', month:'Apr', title:'A Day in the Life: What an Event Videographer Actually Does on Site', excerpt:'From load-in to final cut. What you are actually paying for on event day.', img:'images/journal/event-videographer-day-on-site.jpg', slug:'event-videographer-day-on-site'},
+  {date:'2026-01-13', cat:'Real Estate', month:'Jan', title:'What to Expect During a Real Estate Photo Shoot: A Timeline for Agents', excerpt:'From arrival to delivered gallery in 48 hours. The whole process, minute by minute.', img:'images/journal/real-estate-photo-shoot-timeline-agents.jpg', slug:'real-estate-photo-shoot-timeline-agents'},
+  {date:'2026-01-22', cat:'Real Estate', month:'Jan', title:'FAA Part 107, Explained: Why Your Real Estate Photographer Needs a Drone License', excerpt:'What the license covers, why Seattle airspace makes it non-negotiable, and how to check for one.', img:'images/journal/faa-part-107-real-estate-drone-license.jpg', slug:'faa-part-107-real-estate-drone-license'},
+  {date:'2026-02-03', cat:'Real Estate', month:'Feb', title:'How to Prep a Home for Photos Before the Photographer Arrives', excerpt:'A room-by-room checklist that makes the difference between fine photos and great ones.', img:'images/journal/prep-home-for-real-estate-photos.jpg', slug:'prep-home-for-real-estate-photos'},
+  {date:'2026-02-12', cat:'Real Estate', month:'Feb', title:'Real Estate Photography vs. 3D Virtual Tours: What Actually Sells Homes', excerpt:'Where photos win, where tours earn their keep, and why it usually is not either-or.', img:'images/journal/real-estate-photos-vs-3d-tours.jpg', slug:'real-estate-photos-vs-3d-tours'},
+  {date:'2026-02-24', cat:'Real Estate', month:'Feb', title:'Why More Realtors in Seattle and Tacoma Are Hiring Professional Photographers', excerpt:'Phone cameras got good. Listings got competitive faster. What agents are actually buying.', img:'images/journal/why-realtors-seattle-tacoma-hire-professional-photographers.jpg', slug:'why-realtors-seattle-tacoma-hire-professional-photographers'},
+  {date:'2026-07-08', cat:'Portraits', month:'Jul', title:'What to Wear for a Family Portrait Session in the Pacific Northwest', excerpt:'Layers, texture, and why nobody needs to match. A practical guide built for our weather.', img:'images/journal/what-to-wear-family-portraits-pacific-northwest.jpg', slug:'what-to-wear-family-portraits-pacific-northwest'},
+  {date:'2026-07-10', cat:'Portraits', month:'Jul', title:'How Much Do Portrait Photographers Cost in Seattle? A Real Pricing Breakdown', excerpt:'Real numbers, from a $250 mini to a $700 full session, and what you actually get at each tier.', img:'images/journal/portrait-photographer-cost-seattle.jpg', slug:'portrait-photographer-cost-seattle'},
+  {date:'2026-07-14', cat:'Portraits', month:'Jul', title:'Golden Hour in Seattle: When and Where to Shoot for the Best Light', excerpt:'When golden hour actually happens here, and the spots that make the most of it.', img:'images/journal/golden-hour-seattle-best-light.jpg', slug:'golden-hour-seattle-best-light'},
+  {date:'2026-07-17', cat:'Portraits', month:'Jul', title:'Best Spots for Couples Portraits in Seattle, Season by Season', excerpt:'Green Lake, Kerry Park, Lincoln Park, and when each one earns its place.', img:'images/journal/couples-portrait-spots-seattle.jpg', slug:'couples-portrait-spots-seattle'},
+  {date:'2026-07-20', cat:'Real Estate', month:'Jul', title:'Do Drone Photos Actually Help a Listing Sell Faster?', excerpt:'What aerials add to a listing, which properties benefit, and when they are not worth it.', img:'images/journal/do-drone-photos-help-listings-sell-faster.jpg', slug:'do-drone-photos-help-listings-sell-faster'},
+  {date:'2026-07-05', cat:'Real Estate', month:'Jul', title:'Why drone shots sell homes faster', excerpt:'A Bainbridge listing, and what changed when we added aerials.', img:'images/journal/why-drone-shots-sell-homes-faster.jpg', slug:'why-drone-shots-sell-homes-faster'},
+  {date:'2026-06-18', cat:'Portraits', month:'Jun', title:"The best senior-portrait spots in Seattle", excerpt:'Five locations that photograph beautifully in fall light.', img:'images/journal/best-senior-portrait-spots-seattle.jpg', slug:'best-senior-portrait-spots-seattle'},
+  {date:'2026-05-30', cat:'Landscape', month:'May', title:'Chasing storm light in the Cascades', excerpt:'Notes on shooting the moody weather most people wait out.', img:'images/journal/chasing-storm-light-cascades.jpg', slug:'chasing-storm-light-cascades'}
 ];
 function postCard(p,i){
   const d=['','d1','d2','d3','d4'][i%5];
-  return `<a class="jcard rv ${d}" href="journal/${p.slug}.html"><div class="imgwrap"><img src="${p.img}" alt="${p.title}"></div><div class="meta">${p.cat} · ${p.month}</div><h3>${p.title}</h3><p>${p.excerpt}</p></a>`;
+  return `<a class="jcard rv ${d}" href="/journal/${p.slug}.html"><div class="imgwrap"><img src="${p.img}" alt="${p.title}"></div><div class="meta">${p.cat} · ${p.month}</div><h3>${p.title}</h3><p>${p.excerpt}</p></a>`;
 }
-function renderJournal(){
+(function renderJournal(){
   const sorted=[...POSTS].sort((a,b)=>new Date(b.date)-new Date(a.date));
   const home=document.getElementById('jgridHome');
   if(home) home.innerHTML = sorted.slice(0,3).map(postCard).join('');
   const all=document.getElementById('jgridAll');
   if(all) all.innerHTML = sorted.map(postCard).join('');
-}
-renderJournal();
+})();
 
-// reveal on scroll
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14});
-function observeRevs(){document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));}
-observeRevs();
+document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));
 
-// gallery filter
 document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
   document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');
   const f=c.dataset.f;
   document.querySelectorAll('#gallery .gitem').forEach(g=>g.classList.toggle('hide',!(f==='all'||g.dataset.cat===f)));
 }));
 
-// faq
 document.querySelectorAll('.qa').forEach(q=>q.addEventListener('click',()=>q.classList.toggle('open')));
 
-// helpers
 function jump(id){const el=document.getElementById(id);if(el)scrollTo({top:el.offsetTop-60,behavior:'smooth'});}
-function go(p){
-  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
-  document.getElementById('page-'+p).classList.add('active');
-  nav.classList.remove('scrolled');
-  scrollTo({top:0});
-  if(p==='video'){vcurrent=vtarget=0; primeVideo();}
-  setTimeout(observeRevs,50);
-}
+(function(){ const h=(location.hash||'').replace('#',''); if(h) setTimeout(()=>jump(h),60); })();
 
-/* ---- VIDEO PAGE: scrub the uploaded clip to scroll position ---- */
-const vzone=document.getElementById('vzone'),
-  vscrub=document.getElementById('vscrub'),
-  varrow=document.getElementById('varrow'),
-  vhero=document.getElementById('vhero'),
-  vhudbar=document.getElementById('vhudbar'),
-  vphaseEls=[...document.querySelectorAll('#vphase span')];
-const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
-let vcurrent=0, vtarget=0, vdur=5.08;
-vscrub.addEventListener('loadedmetadata',()=>{ vdur=vscrub.duration||5.08; });
-function videoActive(){return document.getElementById('page-video').classList.contains('active');}
-function primeVideo(){ /* pin to the first frame and keep it static until the user scrolls */
-  try{ vscrub.pause(); vscrub.currentTime = 0; }catch(e){}
-}
-function vMeasure(){
-  if(!videoActive())return;
-  const rect=vzone.getBoundingClientRect();
-  const total=vzone.offsetHeight-innerHeight;
-  vtarget=clamp(-rect.top/total);
-}
-function vRender(){
-  requestAnimationFrame(vRender);
-  if(!videoActive())return;
-  vcurrent+=(vtarget-vcurrent)*0.12;
-  const p=vcurrent;
-  if(vscrub.readyState>=1){ try{ vscrub.currentTime = Math.min(vdur-0.02, p*vdur); }catch(e){} }
-  if(varrow) varrow.style.opacity=String(clamp(1-p*3.5));   /* scroll cue fades out as you scroll */
-  vhero.style.opacity=String(clamp((p-0.86)/0.14));   /* reveal fades in over the bright tail */
-  vhudbar.style.width=(p*100)+'%';
-  let k=0; if(p>=0.35)k=1; if(p>=0.70)k=2; if(p>=0.90)k=3;
-  vphaseEls.forEach(el=>el.classList.toggle('on',+el.dataset.k===k));
-}
-vRender();
 
-/* ---- INQUIRY / INTAKE FORM ---- */
-function openInquiry(svc){
-  go('inquire');
-  const sel=document.getElementById('inqService');
-  if(sel) sel.value = svc || '';
-  const f=document.getElementById('inqForm'), d=document.getElementById('inqDone');
-  if(f) f.style.display=''; if(d) d.style.display='none';
-}
-function submitInquiry(e){
-  e.preventDefault();
-  const form=document.getElementById('inqForm');
-  const btn=document.getElementById('inqSubmitBtn');
-  const nm=(document.getElementById('inqName').value||'').trim();
-  const showThanks=()=>{
-    document.getElementById('inqThanks').textContent = nm ? ('Thanks, '+nm.split(' ')[0]+'!') : 'Thanks!';
-    form.style.display='none';
-    document.getElementById('inqDone').style.display='';
-    scrollTo({top:0,behavior:'smooth'});
-  };
-  const showError=()=>{
-    document.getElementById('inqThanks').textContent = 'Something went wrong';
-    document.getElementById('inqThanksBody').textContent = "Your inquiry didn't send. Please email spencer@townleyphotography.com directly, or try again in a moment.";
-    form.style.display='none';
-    document.getElementById('inqDone').style.display='';
-    scrollTo({top:0,behavior:'smooth'});
-  };
-  if(btn){ btn.disabled=true; btn.textContent='Sending…'; }
-  fetch(form.action, { method:'POST', body:new FormData(form), headers:{ 'Accept':'application/json' } })
-    .then(res=>{ if(res.ok){ showThanks(); } else { showError(); } })
-    .catch(()=>{ showError(); })
-    .finally(()=>{ if(btn){ btn.disabled=false; btn.textContent='Send inquiry'; } });
-  return false;
-}
-/* wire every Book / Check availability button to the intake form, inferring the service */
-document.querySelectorAll('a.btn').forEach(a=>{
-  const t=a.textContent.trim().toLowerCase();
-  if(t.indexOf('book')===0 || t.indexOf('check availability')===0){
-    a.style.cursor='pointer';
-    a.addEventListener('click',e=>{
-      e.preventDefault();
-      const pg=a.closest('.page'); let svc='';
-      if(pg&&pg.id==='page-portrait') svc='Portrait';
-      else if(pg&&pg.id==='page-realestate') svc='Real Estate';
-      else if(pg&&pg.id==='page-landwild') svc='Landscape & Wildlife / Prints';
-      else if(pg&&pg.id==='page-video') svc='Event Video';
-      openInquiry(svc);
-    });
-  }
-});
-/* footer Contact / Book / service links to the form */
-document.querySelectorAll('.foot-inq').forEach(a=>{
-  a.style.cursor='pointer';
-  a.addEventListener('click',e=>{ e.preventDefault();
-    const t=a.textContent.trim(); openInquiry(t==='Real Estate'?'Real Estate':(t.indexOf('Landscape')===0?'Landscape & Wildlife / Prints':'')); });
-});
-
-/* ---- deep-link support: journal/post pages link back here as index.html#portrait, #video, #journal, #inquire ---- */
-(function(){
-  const h=(location.hash||'').replace('#','');
-  if(h && document.getElementById('page-'+h)) go(h);
-})();
 </script>
 </body>
 </html>

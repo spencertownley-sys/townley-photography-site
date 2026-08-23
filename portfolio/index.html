@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Portfolio | Townley Photography, Puget Sound</title>
+<meta name="description" content="Selected photography from across the Puget Sound: portraits, real estate and architecture, landscape and wildlife. Filter by service line to see the work.">
+<link rel="canonical" href="https://townleyphotography.com/portfolio/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1B1A1F;--paper:#F6F2EB;--pacific:#26362F;--fog:#C9C6BE;--brass:#A8895C;--mut:#6a6875;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{display:block;max-width:100%;}
+.imgwrap{overflow:hidden;background:#e6e0d5;}
+.imgwrap img{filter:saturate(.82) contrast(1.05) brightness(.98);transition:transform 1.1s cubic-bezier(.2,.8,.2,1);width:100%;height:100%;object-fit:cover;}
+.imgwrap:hover img{transform:scale(1.06);}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+a{color:inherit;text-decoration:none;}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--brass);}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:300;letter-spacing:-.01em;}
+.btn{display:inline-block;font-size:13px;letter-spacing:.04em;font-weight:500;padding:13px 26px;border-radius:100px;transition:.25s;cursor:pointer;border:1px solid var(--ink);}
+.btn-solid{background:var(--ink);color:var(--paper);}
+.btn-solid:hover{background:var(--pacific);border-color:var(--pacific);}
+.btn-ghost{background:transparent;color:var(--ink);}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);}
+.btn-brass{background:var(--brass);border-color:var(--brass);color:var(--ink);}
+.btn-brass:hover{background:#96794e;border-color:#96794e;color:var(--paper);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;transition:.35s;}
+nav.scrolled{background:rgba(246,242,235,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(27,26,31,.08);}
+.brand{display:flex;align-items:center;gap:11px;cursor:pointer;}
+.mono{width:34px;height:34px;border:1.5px solid currentColor;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:18px;}
+.brand .wm{font-family:'Fraunces',serif;font-size:21px;letter-spacing:.02em;}
+.navlinks{display:flex;align-items:center;gap:30px;font-size:13px;letter-spacing:.03em;}
+.navlinks a{position:relative;padding:4px 0;cursor:pointer;}
+.navlinks a:hover{color:var(--brass);}
+.nav-light,.nav-light .mono{color:var(--paper);}
+nav.scrolled .nav-light,nav.scrolled .nav-light .mono{color:var(--ink);}
+@media(max-width:820px){.navlinks a:not(.bookbtn){display:none;}}
+
+/* HERO (now centered) */
+.hero{position:relative;height:100vh;min-height:620px;display:flex;align-items:flex-end;color:var(--paper);}
+.hero .imgwrap{position:absolute;inset:0;z-index:0;}
+.hero .imgwrap img{filter:saturate(.8) contrast(1.05) brightness(.62);}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,19,24,.28),rgba(20,19,24,.06) 40%,rgba(20,19,24,.72));z-index:1;}
+.hero .inner{position:relative;z-index:2;padding-bottom:9vh;text-align:center;}
+.hero h1{font-size:clamp(42px,7vw,88px);line-height:1.0;color:var(--paper);max-width:16ch;margin:18px auto 0;}
+.hero h1 .it{font-style:italic;font-weight:300;}
+.hero p{margin:22px auto 30px;max-width:46ch;font-size:17px;color:rgba(246,242,235,.86);}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.hero .btn-ghost{color:var(--paper);border-color:rgba(246,242,235,.6);}
+.hero .btn-ghost:hover{background:var(--paper);color:var(--ink);}
+.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(246,242,235,.7);}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.2,1);}
+.rv.in{opacity:1;transform:none;}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+
+section{padding:110px 0;}
+.sec-head{max-width:640px;margin-bottom:44px;}
+.sec-head.ctr{margin-left:auto;margin-right:auto;text-align:center;}
+.sec-head .eyebrow{display:block;margin-bottom:16px;}
+.sec-head h2{font-size:clamp(30px,4.4vw,46px);line-height:1.05;}
+.sec-head h2 .it{font-style:italic;}
+.sec-head p{margin-top:16px;color:var(--mut);font-size:16px;}
+
+/* RANGE */
+.range{border-top:1px solid rgba(27,26,31,.12);border-bottom:1px solid rgba(27,26,31,.12);padding:34px 0;}
+.range .row{display:flex;flex-wrap:wrap;gap:8px 34px;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:clamp(22px,3.2vw,34px);font-weight:300;}
+.range .dot{width:6px;height:6px;border-radius:50%;background:var(--brass);display:inline-block;}
+.range .mut{color:inherit;}
+
+/* SERVICE TILES: centered rows, photo row + video row */
+.grouplbl{text-align:center;margin-bottom:16px;}
+.srow{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;}
+.srow + .grouplbl{margin-top:44px;}
+.tile{position:relative;width:270px;aspect-ratio:4/3.1;border-radius:12px;overflow:hidden;cursor:pointer;}
+@media(max-width:600px){.tile{width:100%;}}
+.tile .imgwrap{position:absolute;inset:0;}
+.tile .imgwrap img{filter:saturate(.8) contrast(1.05) brightness(.72);}
+.tile .lbl{position:absolute;left:20px;bottom:16px;z-index:2;color:var(--paper);}
+.tile .lbl .t{font-family:'Fraunces',serif;font-size:22px;}
+.tile .lbl .s{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;}
+.tile .go{position:absolute;top:14px;right:16px;z-index:2;color:var(--paper);font-size:12px;letter-spacing:.1em;opacity:0;transform:translateX(-6px);transition:.3s;}
+.tile:hover .go{opacity:1;transform:none;}
+
+/* FILTER GALLERY */
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px;justify-content:center;}
+.chip{font-size:12.5px;letter-spacing:.03em;padding:9px 18px;border-radius:100px;border:1px solid rgba(27,26,31,.2);cursor:pointer;transition:.2s;background:transparent;color:var(--ink);font-family:inherit;}
+.chip:hover{border-color:var(--ink);}
+.chip.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+.gallery{columns:3;column-gap:16px;}
+@media(max-width:900px){.gallery{columns:2;}}
+@media(max-width:560px){.gallery{columns:1;}}
+.gitem{break-inside:avoid;margin-bottom:16px;border-radius:10px;overflow:hidden;position:relative;}
+.gitem .cap{position:absolute;left:14px;bottom:12px;color:#fff;z-index:2;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:0;transition:.3s;text-shadow:0 1px 8px rgba(0,0,0,.5);}
+.gitem:hover .cap{opacity:1;}
+.gitem.hide{display:none;}
+
+/* PITCH / STATS */
+.pitch{background:var(--pacific);color:var(--paper);border-radius:20px;padding:64px 48px;}
+.pitch h2{color:var(--paper);font-size:clamp(26px,3.4vw,40px);max-width:20ch;line-height:1.08;}
+.pitch p{color:rgba(246,242,235,.8);margin-top:18px;max-width:52ch;}
+.pitch-grid{display:grid;grid-template-columns:240px 1fr;gap:44px;align-items:center;}
+@media(max-width:820px){.pitch-grid{grid-template-columns:1fr;}}
+.pitch-photo{border-radius:16px;overflow:hidden;aspect-ratio:3/4;background:#1c2b24;}
+.pitch-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.03);}
+.stats{display:flex;flex-wrap:wrap;gap:40px;margin-top:40px;padding-top:34px;border-top:1px solid rgba(246,242,235,.18);}
+.stat .n{font-family:'Fraunces',serif;font-size:38px;color:var(--paper);}
+.stat .l{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-top:2px;}
+
+/* TESTIMONIALS */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:820px){.tgrid{grid-template-columns:1fr;}}
+.tcard{background:#fff;border:1px solid rgba(27,26,31,.09);border-radius:14px;padding:30px;}
+.stars{color:var(--brass);letter-spacing:2px;margin-bottom:14px;}
+.tcard p{font-size:15.5px;color:#2c2b31;}
+.tcard .who{margin-top:16px;font-size:13px;color:var(--mut);font-weight:500;}
+
+/* JOURNAL */
+.jgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+@media(max-width:820px){.jgrid{grid-template-columns:1fr;}}
+.jcard{cursor:pointer;display:block;}
+.jcard .imgwrap{aspect-ratio:3/2;border-radius:12px;margin-bottom:16px;}
+.jcard .meta{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);}
+.jcard h3{font-size:20px;margin:8px 0;line-height:1.2;}
+.jcard p{font-size:14px;color:var(--mut);}
+
+/* BOOKING BAND */
+.band{background:var(--ink);color:var(--paper);border-radius:20px;padding:70px 48px;text-align:center;}
+.band h2{color:var(--paper);font-size:clamp(28px,4vw,46px);}
+.band h2 .it{font-style:italic;}
+.band p{color:rgba(246,242,235,.75);margin:16px auto 28px;max-width:44ch;}
+
+/* FOOTER */
+footer{background:var(--pacific);color:rgba(246,242,235,.82);padding:70px 0 40px;margin-top:20px;}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1.6fr;gap:30px;padding-bottom:40px;border-bottom:1px solid rgba(246,242,235,.16);}
+@media(max-width:820px){.fgrid{grid-template-columns:1fr 1fr;}}
+footer .wm{font-family:'Fraunces',serif;font-size:26px;color:var(--paper);}
+footer h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:14px;}
+footer a{display:block;font-size:14px;padding:5px 0;color:rgba(246,242,235,.82);cursor:pointer;}
+footer a:hover{color:var(--paper);}
+.news input{width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(246,242,235,.25);background:transparent;color:var(--paper);font-family:inherit;margin-bottom:10px;}
+.fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:24px;font-size:12px;color:rgba(246,242,235,.6);}
+.note{max-width:760px;margin:0 auto;background:#efe9df;border:1px dashed #c3b795;border-radius:10px;padding:12px 18px;font-size:12.5px;color:#6a6146;text-align:center;}
+
+/* PAGES */
+
+/* PORTRAIT LANDING */
+.lp-hero{position:relative;height:78vh;min-height:520px;display:flex;align-items:center;color:var(--paper);}
+.lp-hero .imgwrap{position:absolute;inset:0;}
+.lp-hero .imgwrap img{filter:saturate(.82) contrast(1.05) brightness(.6);}
+.lp-hero .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,19,24,.72),rgba(20,19,24,.15));z-index:1;}
+.lp-hero .inner{position:relative;z-index:2;}
+.lp-hero h1{color:var(--paper);font-size:clamp(38px,6vw,72px);line-height:1.02;max-width:15ch;}
+.lp-hero p{color:rgba(246,242,235,.85);margin:20px 0 28px;max-width:40ch;font-size:17px;}
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:820px){.pkgs{grid-template-columns:1fr;}}
+.pkg{border:1px solid rgba(27,26,31,.12);border-radius:16px;padding:32px;background:#fff;transition:.3s;}
+.pkg:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(27,26,31,.08);}
+.pkg.feat{border-color:var(--brass);box-shadow:0 8px 30px rgba(168,137,92,.14);}
+.pkg .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);}
+.pkg .pr{font-family:'Fraunces',serif;font-size:42px;margin:10px 0 4px;}
+.pkg ul{list-style:none;margin:18px 0 24px;}
+.pkg li{font-size:14px;padding:8px 0 8px 22px;position:relative;border-top:1px solid rgba(27,26,31,.07);color:#333;}
+.pkg li:before{content:"·";position:absolute;left:0;color:var(--brass);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr;}}
+.step .no{font-family:'Fraunces',serif;font-size:30px;color:var(--brass);}
+.step h3{font-size:18px;margin:6px 0;}
+.step p{font-size:14px;color:var(--mut);}
+.faq{max-width:820px;}
+.qa{border-top:1px solid rgba(27,26,31,.12);padding:20px 0;cursor:pointer;}
+.qa .q{display:flex;justify-content:space-between;align-items:center;font-family:'Fraunces',serif;font-size:20px;}
+.qa .q span{color:var(--brass);font-family:'Inter';font-size:22px;transition:.3s;}
+.qa .a{max-height:0;overflow:hidden;transition:max-height .4s ease,margin .4s;color:var(--mut);font-size:15px;}
+.qa.open .a{max-height:220px;margin-top:12px;}
+.qa.open .q span{transform:rotate(45deg);}
+.backhome{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.05em;color:var(--brass);cursor:pointer;margin-bottom:10px;}
+
+/* INQUIRY / INTAKE PAGE */
+.inq-hero{padding:130px 0 90px;}
+.inq-wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;align-items:start;}
+@media(max-width:820px){.inq-wrap{grid-template-columns:1fr;gap:28px;}}
+.inq-side h1{font-size:clamp(34px,5vw,56px);line-height:1.02;margin-top:14px;}
+.inq-side h1 .it{font-style:italic;}
+.inq-side p{color:var(--mut);margin-top:16px;max-width:40ch;}
+.inq-steps{margin-top:28px;}
+.inq-steps .s{display:flex;gap:14px;padding:13px 0;border-top:1px solid rgba(27,26,31,.1);}
+.inq-steps .n{font-family:'Fraunces',serif;color:var(--brass);font-size:20px;line-height:1;}
+.inq-steps .t{font-size:14px;color:#333;}
+.form{background:#fff;border:1px solid rgba(27,26,31,.1);border-radius:16px;padding:30px;box-shadow:0 8px 30px rgba(27,26,31,.05);}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:560px){.form .row{grid-template-columns:1fr;}}
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--mut);margin-bottom:6px;font-weight:600;}
+.field input,.field select,.field textarea{width:100%;padding:12px 13px;border:1px solid rgba(27,26,31,.2);border-radius:9px;font-family:inherit;font-size:15px;color:var(--ink);background:#fbf9f5;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brass);}
+.field textarea{min-height:96px;resize:vertical;}
+.form .sub{margin-top:8px;font-size:12px;color:var(--mut);}
+.req{color:var(--brass);}
+.inq-done{background:#EDF1EC;border:1px solid #cdd8cc;border-radius:16px;padding:44px 30px;text-align:center;}
+.inq-done h3{font-size:28px;margin-bottom:10px;}
+.inq-done p{color:#3c5a3f;max-width:38ch;margin:0 auto;}
+.inq-note{margin-top:14px;font-size:12px;color:var(--mut);text-align:center;}
+
+/* ============ VIDEO PAGE (scroll hero): namespaced v-* ============ */
+#page-video{background:#0d0c11;}
+.v-hud{position:fixed;top:0;left:0;right:0;height:3px;background:rgba(255,255,255,.08);z-index:60;}
+.v-hud i{display:block;height:100%;width:0;background:var(--brass);}
+.v-intro{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;background:radial-gradient(120% 120% at 50% 0%,#1a1922,#0d0c11);color:var(--paper);position:relative;}
+.v-back{position:absolute;top:80px;left:32px;font-size:13px;letter-spacing:.05em;color:var(--brass);cursor:pointer;}
+.v-intro h1{font-size:clamp(40px,7vw,86px);line-height:1;color:var(--paper);}
+.v-intro h1 .it{font-style:italic;}
+.v-intro p{color:rgba(246,242,235,.6);max-width:42ch;font-size:16px;}
+.v-cue{margin-top:20px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,242,235,.5);animation:vbob 1.8s infinite;}
+@keyframes vbob{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(6px);opacity:1}}
+/* scroll-cue down arrow */
+.v-downarrow{position:absolute;right:34px;top:50%;z-index:12;color:rgba(246,242,235,.9);filter:drop-shadow(0 2px 6px rgba(0,0,0,.65));animation:vbobY 1.8s infinite;}
+@keyframes vbobY{0%,100%{transform:translateY(-50%)}50%{transform:translateY(calc(-50% + 7px))}}
+@media(max-width:600px){.v-downarrow{right:16px;}.v-downarrow svg{width:15px;height:28px;}}
+.v-scrollzone{height:340vh;position:relative;}
+.v-stage{position:sticky;top:0;height:100vh;overflow:hidden;background:radial-gradient(130% 100% at 50% 20%,#22212b,#0c0b10 70%);display:flex;align-items:center;justify-content:center;perspective:1300px;}
+.v-scrubvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:5;background:#0c0b10;pointer-events:none;}
+.v-orbit{transform-style:preserve-3d;will-change:transform;}
+.v-push{position:relative;width:380px;height:320px;transform-style:preserve-3d;transform-origin:50% 26%;will-change:transform;}
+.v-shadow{position:absolute;left:50%;bottom:6px;width:300px;height:60px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(0,0,0,.55),transparent 70%);filter:blur(6px);}
+.v-body{position:absolute;left:50%;top:120px;width:344px;height:200px;transform:translateX(-50%);border-radius:28px;background:linear-gradient(155deg,#33323b,#17161d 58%,#0f0e13);box-shadow:inset 0 2px 3px rgba(255,255,255,.08), inset 0 -14px 30px rgba(0,0,0,.6), 0 30px 60px rgba(0,0,0,.5);}
+.v-body:before{content:"";position:absolute;inset:0 0 auto 0;height:2px;border-radius:28px 28px 0 0;background:linear-gradient(90deg,transparent,rgba(168,137,92,.6),transparent);}
+.v-grip{position:absolute;left:calc(50% + 118px);top:130px;width:56px;height:184px;transform:translateZ(26px);border-radius:14px 22px 22px 14px;background:linear-gradient(120deg,#3a3942,#1a1920);box-shadow:0 12px 24px rgba(0,0,0,.4);}
+.v-shutter{position:absolute;left:calc(50% - 150px);top:112px;width:26px;height:16px;transform:translateZ(30px);border-radius:6px;background:linear-gradient(#c9a56c,#8a6d43);box-shadow:0 3px 6px rgba(0,0,0,.5);}
+.v-lens{position:absolute;left:50%;top:150px;width:176px;height:176px;transform:translateX(-50%) translateZ(58px);border-radius:50%;background:radial-gradient(circle at 38% 32%, #5a6b7d 0%, #2a3340 34%, #10141b 66%, #05070a 100%);box-shadow:0 0 0 10px #14131a, 0 0 0 15px var(--brass), 0 0 0 24px #0c0b10, 0 24px 50px rgba(0,0,0,.6);}
+.v-lens:before{content:"";position:absolute;inset:26%;border-radius:50%;background:radial-gradient(circle at 40% 34%, rgba(255,255,255,.28), transparent 45%);}
+.v-lens:after{content:"";position:absolute;inset:12%;border-radius:50%;box-shadow:inset 0 0 30px rgba(0,0,0,.8);}
+.v-prism{position:absolute;left:50%;top:74px;width:150px;height:60px;transform:translateX(-50%) translateZ(6px);clip-path:polygon(16% 100%,84% 100%,68% 0,32% 0);background:linear-gradient(#2c2b34,#141319);box-shadow:0 -3px 8px rgba(0,0,0,.4);}
+.v-eye{position:absolute;left:50%;top:70px;width:60px;height:40px;transform:translateX(-50%) translateZ(2px);border-radius:12px;background:radial-gradient(circle at 50% 45%, #1b1f26 0%, #050608 70%);box-shadow:0 0 0 4px #26252d, 0 0 0 7px rgba(168,137,92,.55), inset 0 0 14px rgba(0,0,0,.9);}
+.v-eye:after{content:"";position:absolute;inset:30%;border-radius:50%;background:radial-gradient(circle,rgba(168,137,92,.35),transparent 70%);}
+.v-flashunit{position:absolute;left:calc(50% - 120px);top:66px;width:74px;height:26px;transform:translateZ(8px);border-radius:6px;background:linear-gradient(#efe9df,#b7b2a6);box-shadow:0 3px 8px rgba(0,0,0,.5);overflow:hidden;}
+.v-flashunit .v-glint{position:absolute;top:0;left:-40%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.95),transparent);opacity:0;}
+.v-label3d{position:absolute;left:50%;bottom:38px;transform:translateX(-50%);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,242,235,.35);white-space:nowrap;}
+.v-tunnel{position:absolute;inset:0;pointer-events:none;z-index:20;background:radial-gradient(circle at 50% 46%, transparent var(--hole,120%), #050508 calc(var(--hole,120%) + 1%));opacity:0;}
+.v-flash{position:absolute;inset:0;background:#fff;opacity:0;z-index:30;pointer-events:none;}
+.v-hero{position:absolute;inset:0;z-index:25;opacity:0;pointer-events:none;overflow:hidden;background:#0c0b10;}
+.v-hero video,.v-fauxvid{width:100%;height:100%;object-fit:cover;}
+.v-fauxvid{background:linear-gradient(115deg,#26362f,#1b1a1f 45%,#3a2c1c 80%,#26362f);background-size:300% 300%;animation:vpan 14s ease-in-out infinite;position:relative;}
+.v-fauxvid:before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 30% 30%,rgba(168,137,92,.25),transparent 60%),radial-gradient(50% 70% at 75% 70%,rgba(201,198,190,.14),transparent 60%);animation:vdrift 18s ease-in-out infinite alternate;}
+@keyframes vpan{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes vdrift{from{transform:scale(1)}to{transform:scale(1.15)}}
+.v-cap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:2;text-align:center;}
+.v-cap h2{font-size:clamp(34px,6vw,74px);color:var(--paper);}
+.v-cap h2 .it{font-style:italic;}
+.v-vidchip{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,242,235,.75);border:1px solid rgba(246,242,235,.3);border-radius:100px;padding:8px 16px;}
+.v-vidchip .dot{width:8px;height:8px;border-radius:50%;background:var(--brass);}
+.v-playbar{position:absolute;left:32px;right:32px;bottom:28px;height:3px;border-radius:3px;background:rgba(255,255,255,.2);z-index:3;overflow:hidden;}
+.v-playbar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--brass);animation:vplay 14s linear infinite;}
+@keyframes vplay{from{width:0}to{width:100%}}
+.v-after{background:var(--paper);color:var(--ink);padding:110px 32px;text-align:center;}
+.v-after .eyebrow{color:var(--brass);}
+.v-after h2{font-size:clamp(28px,4vw,46px);margin:14px 0;}
+.v-after p{color:#555;max-width:52ch;margin:0 auto 26px;}
+.navlinks a.on{color:var(--brass);}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="brand nav-light" href="/"><div class="mono">T</div><div class="wm">Townley</div></a>
+  <div class="navlinks nav-light">
+    <a href="/">Home</a>
+    <a href="/portfolio/" class="on">Photography</a>
+    <a href="/video/">Video</a>
+    <a href="/journal/">Journal</a>
+    <a class="btn btn-brass bookbtn" href="/book/">Book</a>
+  </div>
+</nav>
+
+
+  <section class="inq-hero"><div class="wrap">
+    <a class="backhome" href="/">&larr; Back to home</a>
+    <div class="sec-head rv"><span class="eyebrow">Photo Portfolio</span><h2>The <span class="it">work.</span></h2>
+      <p>A decade of photographs from one corner of the map: families and headshots, listings and architecture, coastline, mountains, and the animals in between. Filter by service line, or jump straight to the service you need.</p></div>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
+    <div class="filters rv">
+      <button class="chip active" data-f="all">All</button>
+      <button class="chip" data-f="portrait">Portraits</button>
+      <button class="chip" data-f="realestate">Real Estate</button>
+      <button class="chip" data-f="landwild">Landscape &amp; Wildlife</button>
+      <button class="chip" data-f="video">Video</button>
+    </div>
+    <div class="gallery" id="gallery">
+      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="/images/gallery-portrait-1.jpg" alt="Portrait photography, first birthday cake smash session"></div><div class="cap">Portrait</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="/images/gallery-landwild-1.jpg" alt="Landscape photography, red rock desert road"></div><div class="cap">Landscape</div></div>
+      <div class="gitem" data-cat="realestate"><div class="imgwrap"><img src="/images/gallery-realestate-1.jpg" alt="Architectural photography, modern pavilion structure"></div><div class="cap">Real Estate</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="/images/gallery-wildlife-1.jpg" alt="Wildlife and pet photography, coastal bluff"></div><div class="cap">Wildlife</div></div>
+      <div class="gitem" data-cat="video"><div class="imgwrap"><img src="/images/gallery-video-1.jpg" alt="Film and video photography, golden hour portrait"></div><div class="cap">Video</div></div>
+      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="/images/gallery-portrait-2.jpg" alt="Portrait photography, family with baby"></div><div class="cap">Portrait</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="/images/gallery-landwild-2.jpg" alt="Landscape photography, Washington State ferry"></div><div class="cap">Landscape</div></div>
+      <div class="gitem" data-cat="realestate"><div class="imgwrap"><img src="/images/gallery-realestate-2.jpg" alt="Urban architecture and city skyline photography"></div><div class="cap">Real Estate</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="/images/gallery-wildlife-2.jpg" alt="Wildlife photography, elephant at sunset"></div><div class="cap">Wildlife</div></div>
+      <div class="gitem" data-cat="portrait"><div class="imgwrap"><img src="/images/gallery-portrait-3.jpg" alt="Portrait photography, studio session"></div><div class="cap">Portrait</div></div>
+      <div class="gitem" data-cat="video"><div class="imgwrap"><img src="/images/gallery-video-2.jpg" alt="Event film photography, cinematic portrait"></div><div class="cap">Video</div></div>
+      <div class="gitem" data-cat="landwild"><div class="imgwrap"><img src="/images/gallery-landwild-3.jpg" alt="Wildlife photography, bighorn sheep"></div><div class="cap">Landscape</div></div>
+    </div>
+  </div></section>
+
+  <section style="padding-top:20px"><div class="wrap">
+    <div class="sec-head ctr rv"><span class="eyebrow">Go deeper</span><h2>By <span class="it">service line.</span></h2></div>
+    <div class="srow">
+      <div class="tile rv" href="/portrait/"><div class="imgwrap"><img src="/images/tile-portrait.jpg" alt="Portrait photography, Puget Sound"></div><div class="go">View &rarr;</div><div class="lbl"><div class="t">Portraits</div><div class="s">Flagship</div></div></div>
+      <div class="tile rv d1" href="/real-estate/"><div class="imgwrap"><img src="/images/tile-realestate.jpg" alt="Real estate photography, glass high-rise architectural detail"></div><div class="go">View &rarr;</div><div class="lbl"><div class="t">Real Estate</div><div class="s">+ Drone / 3D</div></div></div>
+      <div class="tile rv d2" href="/landscape-wildlife/"><div class="imgwrap"><img src="/images/tile-landwild.jpg" alt="Fine art landscape photography, autumn aspen trees"></div><div class="go">View &rarr;</div><div class="lbl"><div class="t">Landscape &amp; Wildlife</div><div class="s">Fine Art</div></div></div>
+    </div>
+  </div></section>
+
+  <section style="padding-top:20px"><div class="wrap"><div class="band rv">
+    <h2>Let's make <span class="it">something good.</span></h2>
+    <p>Check live availability and book your session: portraits, property, or film.</p>
+    <a class="btn btn-brass" href="/book/">Check availability</a>
+  </div></div></section>
+
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div>
+      <div class="wm">Townley</div>
+      <p style="margin-top:10px;font-size:14px;max-width:34ch;">Professional photography and film across the Puget Sound region. Credible, dependable, fairly priced.</p>
+    </div>
+    <div><h4>Services</h4><a href="/portrait/">Portraits</a><a href="/real-estate/">Real Estate</a><a href="/video/">Video</a><a href="/landscape-wildlife/">Landscape &amp; Wildlife</a></div>
+    <div><h4>Studio</h4><a href="/portfolio/">Portfolio</a><a href="/journal/">Journal</a><a href="/book/">Contact</a><a href="/book/">Book</a></div>
+    <div class="news"><h4>Newsletter</h4>
+      <p style="font-size:13px;margin-bottom:12px;">Location guides and seasonal offers. No spam.</p>
+      <input placeholder="you@email.com"><a class="btn btn-brass" style="width:100%;text-align:center">Subscribe</a>
+    </div>
+  </div>
+  <div class="fbot">
+    <div>&copy; 2026 Townley Photography &middot; Part of Townley Creative</div>
+    <div>@townley_photography &middot; @spencertownley &middot; Privacy &middot; Licensing</div>
+  </div>
+</div></footer>
+
+<script>
+
+const nav=document.getElementById('nav');
+addEventListener('scroll',onScroll,{passive:true});
+function onScroll(){nav.classList.toggle('scrolled',scrollY>60); if(window.vMeasure)vMeasure();}
+
+const POSTS=[
+  {date:'2026-05-12', cat:'Marketing Video', month:'May', title:'How Much Should a Small Business Budget for a Brand Video?', excerpt:'Real ranges, what moves the price, and where a small budget goes furthest.', img:'images/journal/small-business-brand-video-budget.jpg', slug:'small-business-brand-video-budget'},
+  {date:'2026-05-21', cat:'Marketing Video', month:'May', title:'What Makes a Marketing Video Actually Convert, Not Just Look Good', excerpt:'The first five seconds, the one clear ask, and why pretty footage is not a strategy.', img:'images/journal/marketing-video-convert-not-just-look-good.jpg', slug:'marketing-video-convert-not-just-look-good'},
+  {date:'2026-05-29', cat:'Marketing Video', month:'May', title:'Case-Study-Style Video: Why It Outperforms a Traditional Ad', excerpt:'A customer telling the truth beats an actor reading a script. Here is why it works.', img:'images/journal/case-study-video-outperforms-traditional-ad.jpg', slug:'case-study-video-outperforms-traditional-ad'},
+  {date:'2026-06-09', cat:'About', month:'Jun', title:"Meet Spencer Townley: A Puget Sound Photographer's Story", excerpt:'Disposable cameras at the zoo, Gonzaga commercials, and how it became this business.', img:'images/journal/meet-spencer-townley-puget-sound-photographer.jpg', slug:'meet-spencer-townley-puget-sound-photographer'},
+  {date:'2026-06-18', cat:'About', month:'Jun', title:'Why Hire a Local Photographer Instead of a National Marketplace', excerpt:'Marketplaces sell convenience. A local photographer sells knowing the light here.', img:'images/journal/local-photographer-vs-national-marketplace.jpg', slug:'local-photographer-vs-national-marketplace'},
+  {date:'2026-07-23', cat:'FAQ', month:'Jul', title:'Frequently Asked Questions About Booking a Session', excerpt:'Deposits, turnaround, travel, weather, and what happens after you hit send.', img:'images/journal/booking-faq-townley-photography.jpg', slug:'booking-faq-townley-photography'},
+  {date:'2026-07-28', cat:'FAQ', month:'Jul', title:'What Insurance and Licensing You Should Expect From a Professional Photographer', excerpt:'Liability coverage, drone certification, contracts, and the questions worth asking.', img:'images/journal/photographer-insurance-licensing-what-to-expect.jpg', slug:'photographer-insurance-licensing-what-to-expect'},
+  {date:'2026-07-31', cat:'General', month:'Jul', title:'A Season-by-Season Guide to Photography in the Pacific Northwest', excerpt:'What each season here actually gives a camera, and how to plan around it.', img:'images/journal/season-by-season-guide-photography-pacific-northwest.jpg', slug:'season-by-season-guide-photography-pacific-northwest'},
+  {date:'2026-08-03', cat:'Basics', month:'Aug', title:'The Basics of Photography', excerpt:'Aperture, shutter speed, ISO, and light, explained in the order that actually helps.', img:'images/journal/the-basics-of-photography.jpg', slug:'the-basics-of-photography'},
+  {date:'2026-08-04', cat:'Basics', month:'Aug', title:'How to Start Photography', excerpt:'Use the camera you own, on purpose, every day for a month. Gear can wait.', img:'images/journal/how-to-start-photography.jpg', slug:'how-to-start-photography'},
+  {date:'2026-03-10', cat:'Landscape', month:'Mar', title:'How to License Landscape Photography for Commercial Use', excerpt:'Rights, usage, and what a license actually buys. A plain-language guide for brands.', img:'images/journal/license-landscape-photography-commercial-use.jpg', slug:'license-landscape-photography-commercial-use'},
+  {date:'2026-03-24', cat:'Landscape', month:'Mar', title:'What Makes a Landscape Photo Worth Printing Large', excerpt:'Resolution is the least of it. What separates a wall print from a scroll-past.', img:'images/journal/landscape-photo-worth-printing-large.jpg', slug:'landscape-photo-worth-printing-large'},
+  {date:'2026-04-07', cat:'Wildlife', month:'Apr', title:"How a Telephoto Lens Changes What's Possible in Wildlife Photography", excerpt:'Distance is the whole game. What real reach means for the animals and the photos.', img:'images/journal/telephoto-lens-wildlife-photography.jpg', slug:'telephoto-lens-wildlife-photography'},
+  {date:'2026-04-16', cat:'Event Video', month:'Apr', title:'What to Look for in an Event Videographer in Seattle', excerpt:'The questions worth asking before you book, and the answers that actually matter.', img:'images/journal/event-videographer-seattle-what-to-look-for.jpg', slug:'event-videographer-seattle-what-to-look-for'},
+  {date:'2026-04-28', cat:'Event Video', month:'Apr', title:'A Day in the Life: What an Event Videographer Actually Does on Site', excerpt:'From load-in to final cut. What you are actually paying for on event day.', img:'images/journal/event-videographer-day-on-site.jpg', slug:'event-videographer-day-on-site'},
+  {date:'2026-01-13', cat:'Real Estate', month:'Jan', title:'What to Expect During a Real Estate Photo Shoot: A Timeline for Agents', excerpt:'From arrival to delivered gallery in 48 hours. The whole process, minute by minute.', img:'images/journal/real-estate-photo-shoot-timeline-agents.jpg', slug:'real-estate-photo-shoot-timeline-agents'},
+  {date:'2026-01-22', cat:'Real Estate', month:'Jan', title:'FAA Part 107, Explained: Why Your Real Estate Photographer Needs a Drone License', excerpt:'What the license covers, why Seattle airspace makes it non-negotiable, and how to check for one.', img:'images/journal/faa-part-107-real-estate-drone-license.jpg', slug:'faa-part-107-real-estate-drone-license'},
+  {date:'2026-02-03', cat:'Real Estate', month:'Feb', title:'How to Prep a Home for Photos Before the Photographer Arrives', excerpt:'A room-by-room checklist that makes the difference between fine photos and great ones.', img:'images/journal/prep-home-for-real-estate-photos.jpg', slug:'prep-home-for-real-estate-photos'},
+  {date:'2026-02-12', cat:'Real Estate', month:'Feb', title:'Real Estate Photography vs. 3D Virtual Tours: What Actually Sells Homes', excerpt:'Where photos win, where tours earn their keep, and why it usually is not either-or.', img:'images/journal/real-estate-photos-vs-3d-tours.jpg', slug:'real-estate-photos-vs-3d-tours'},
+  {date:'2026-02-24', cat:'Real Estate', month:'Feb', title:'Why More Realtors in Seattle and Tacoma Are Hiring Professional Photographers', excerpt:'Phone cameras got good. Listings got competitive faster. What agents are actually buying.', img:'images/journal/why-realtors-seattle-tacoma-hire-professional-photographers.jpg', slug:'why-realtors-seattle-tacoma-hire-professional-photographers'},
+  {date:'2026-07-08', cat:'Portraits', month:'Jul', title:'What to Wear for a Family Portrait Session in the Pacific Northwest', excerpt:'Layers, texture, and why nobody needs to match. A practical guide built for our weather.', img:'images/journal/what-to-wear-family-portraits-pacific-northwest.jpg', slug:'what-to-wear-family-portraits-pacific-northwest'},
+  {date:'2026-07-10', cat:'Portraits', month:'Jul', title:'How Much Do Portrait Photographers Cost in Seattle? A Real Pricing Breakdown', excerpt:'Real numbers, from a $250 mini to a $700 full session, and what you actually get at each tier.', img:'images/journal/portrait-photographer-cost-seattle.jpg', slug:'portrait-photographer-cost-seattle'},
+  {date:'2026-07-14', cat:'Portraits', month:'Jul', title:'Golden Hour in Seattle: When and Where to Shoot for the Best Light', excerpt:'When golden hour actually happens here, and the spots that make the most of it.', img:'images/journal/golden-hour-seattle-best-light.jpg', slug:'golden-hour-seattle-best-light'},
+  {date:'2026-07-17', cat:'Portraits', month:'Jul', title:'Best Spots for Couples Portraits in Seattle, Season by Season', excerpt:'Green Lake, Kerry Park, Lincoln Park, and when each one earns its place.', img:'images/journal/couples-portrait-spots-seattle.jpg', slug:'couples-portrait-spots-seattle'},
+  {date:'2026-07-20', cat:'Real Estate', month:'Jul', title:'Do Drone Photos Actually Help a Listing Sell Faster?', excerpt:'What aerials add to a listing, which properties benefit, and when they are not worth it.', img:'images/journal/do-drone-photos-help-listings-sell-faster.jpg', slug:'do-drone-photos-help-listings-sell-faster'},
+  {date:'2026-07-05', cat:'Real Estate', month:'Jul', title:'Why drone shots sell homes faster', excerpt:'A Bainbridge listing, and what changed when we added aerials.', img:'images/journal/why-drone-shots-sell-homes-faster.jpg', slug:'why-drone-shots-sell-homes-faster'},
+  {date:'2026-06-18', cat:'Portraits', month:'Jun', title:"The best senior-portrait spots in Seattle", excerpt:'Five locations that photograph beautifully in fall light.', img:'images/journal/best-senior-portrait-spots-seattle.jpg', slug:'best-senior-portrait-spots-seattle'},
+  {date:'2026-05-30', cat:'Landscape', month:'May', title:'Chasing storm light in the Cascades', excerpt:'Notes on shooting the moody weather most people wait out.', img:'images/journal/chasing-storm-light-cascades.jpg', slug:'chasing-storm-light-cascades'}
+];
+function postCard(p,i){
+  const d=['','d1','d2','d3','d4'][i%5];
+  return `<a class="jcard rv ${d}" href="/journal/${p.slug}.html"><div class="imgwrap"><img src="${p.img}" alt="${p.title}"></div><div class="meta">${p.cat} · ${p.month}</div><h3>${p.title}</h3><p>${p.excerpt}</p></a>`;
+}
+(function renderJournal(){
+  const sorted=[...POSTS].sort((a,b)=>new Date(b.date)-new Date(a.date));
+  const home=document.getElementById('jgridHome');
+  if(home) home.innerHTML = sorted.slice(0,3).map(postCard).join('');
+  const all=document.getElementById('jgridAll');
+  if(all) all.innerHTML = sorted.map(postCard).join('');
+})();
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14});
+document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));
+
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');
+  const f=c.dataset.f;
+  document.querySelectorAll('#gallery .gitem').forEach(g=>g.classList.toggle('hide',!(f==='all'||g.dataset.cat===f)));
+}));
+
+document.querySelectorAll('.qa').forEach(q=>q.addEventListener('click',()=>q.classList.toggle('open')));
+
+function jump(id){const el=document.getElementById(id);if(el)scrollTo({top:el.offsetTop-60,behavior:'smooth'});}
+(function(){ const h=(location.hash||'').replace('#',''); if(h) setTimeout(()=>jump(h),60); })();
+
+
+</script>
+</body>
+</html>
