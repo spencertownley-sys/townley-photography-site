@@ -1,0 +1,24 @@
+# --- confirmed old Wix pages ---
+/book-online              /book/                 301
+/english-privacy-policy   /privacy/              301
+/accessibility-statement  /                      301
+
+# --- common Wix defaults ---
+/about                    /                      301
+/about-us                 /                      301
+/contact                  /book/                 301
+/contact-us               /book/                 301
+/services                 /portfolio/            301
+/pricing                  /portrait/             301
+/gallery                  /portfolio/            301
+/galleries                /portfolio/            301
+/headshots                /portrait/             301
+/blog                     /journal/              301
+/post/*                   /journal/              301
+/shop                     /landscape-wildlife/   301
+/store                    /landscape-wildlife/   301
+/prints                   /landscape-wildlife/   301
+/product-page/*           /landscape-wildlife/   301
+/booking-calendar         /book/                 301
+/book-now                 /book/                 301
+/home                     /                      301
