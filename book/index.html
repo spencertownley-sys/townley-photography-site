@@ -456,7 +456,7 @@ function submitInquiry(e){
   const showThanks=()=>{ document.getElementById('inqThanks').textContent = nm ? ('Thanks, '+nm.split(' ')[0]+'!') : 'Thanks!'; done(); };
   const showError=()=>{
     document.getElementById('inqThanks').textContent='Something went wrong';
-    document.getElementById('inqThanksBody').textContent="Your inquiry didn't send. Please email spencer@townleyphotography.com directly, or try again in a moment.";
+    document.getElementById('inqThanksBody').textContent="Your inquiry didn't send. Please email hello@townleyphotography.com directly, or try again in a moment.";
     done();
   };
   if(btn){ btn.disabled=true; btn.textContent='Sending…'; }
