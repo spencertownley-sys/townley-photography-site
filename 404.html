@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Video Portfolio | Event Film & Marketing Video | Townley Photography</title>
-<meta name="description" content="Event highlight films, brand stories, and social cutdowns across the Puget Sound region. Cinematic, dependable, delivered on time.">
-<link rel="canonical" href="https://townleyphotography.com/video/">
+<title>Page not found | Townley Photography</title>
+<meta name="description" content="That page could not be found. Head back to the portfolio, journal, or booking page.">
+<link rel="canonical" href="https://townleyphotography.com/404.html">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Townley Photography">
-<meta property="og:title" content="Video Portfolio | Event Film & Marketing Video | Townley Photography">
-<meta property="og:description" content="Event highlight films, brand stories, and social cutdowns across the Puget Sound region. Cinematic, dependable, delivered on time.">
-<meta property="og:url" content="https://townleyphotography.com/video/">
-<meta property="og:image" content="https://townleyphotography.com/images/tile-event.jpg">
+<meta property="og:title" content="Page not found | Townley Photography">
+<meta property="og:description" content="That page could not be found. Head back to the portfolio, journal, or booking page.">
+<meta property="og:url" content="https://townleyphotography.com/404.html">
+<meta property="og:image" content="https://townleyphotography.com/images/hero.jpg">
 <meta property="og:image:alt" content="Photography by Spencer Townley, Puget Sound">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Video Portfolio | Event Film & Marketing Video | Townley Photography">
-<meta name="twitter:description" content="Event highlight films, brand stories, and social cutdowns across the Puget Sound region. Cinematic, dependable, delivered on time.">
-<meta name="twitter:image" content="https://townleyphotography.com/images/tile-event.jpg">
+<meta name="twitter:title" content="Page not found | Townley Photography">
+<meta name="twitter:description" content="That page could not be found. Head back to the portfolio, journal, or booking page.">
+<meta name="twitter:image" content="https://townleyphotography.com/images/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -288,37 +288,25 @@ footer a:hover{color:var(--paper);}
   <div class="navlinks nav-light">
     <a href="/">Home</a>
     <a href="/portfolio/">Photography</a>
-    <a href="/video/" class="on">Video</a>
+    <a href="/video/">Video</a>
     <a href="/journal/">Journal</a>
     <a class="btn btn-brass bookbtn" href="/book/">Book</a>
   </div>
 </nav>
 
-  <div class="v-hud"><i id="vhudbar"></i></div>
-  
-  <div class="v-scrollzone" id="vzone">
-    <div class="v-stage">
-      
-      <video class="v-scrubvid" id="vscrub" src="/camera-scroll.mp4" muted playsinline preload="auto"></video>
-      <div class="v-downarrow" id="varrow" aria-hidden="true"><svg width="20" height="38" viewBox="0 0 20 38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="2" x2="10" y2="31"/><path d="M3 24l7 7 7-7"/></svg></div>
-      
-      <div class="v-hero" id="vhero">
-        <div class="v-fauxvid"></div>
-        <div class="v-cap">
-          <div class="v-vidchip"><span class="dot"></span>Event Film &middot; Marketing Video</div>
-          <h2>Puget Sound, <span class="it">in motion.</span></h2>
-        </div>
-        <div class="v-playbar"><i></i></div>
-      </div>
-    </div>
-  </div>
 
-  <section class="v-after">
-    <div class="eyebrow">Event Film · Marketing Video</div>
-    <h2>Film that <span style="font-style:italic">moves people.</span></h2>
-    <p>Highlight films, brand stories, and social cutdowns across the Puget Sound region: cinematic, dependable, and delivered on time.</p>
-    <a class="btn btn-brass" style="border-color:var(--brass)" href="/book/?service=Event%20Video">Book a video project</a>
-      </section>
+  <section class="inq-hero"><div class="wrap" style="text-align:center">
+    <div class="sec-head ctr rv"><span class="eyebrow">Error 404</span>
+      <h2>This page went <span class="it">out of frame.</span></h2>
+      <p>The link may be old, or the page may have moved when the site was rebuilt. Here is the way back.</p></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+      <a class="btn btn-solid" href="/">Home</a>
+      <a class="btn btn-ghost" href="/portfolio/">Photography</a>
+      <a class="btn btn-ghost" href="/video/">Video</a>
+      <a class="btn btn-ghost" href="/journal/">Journal</a>
+      <a class="btn btn-brass" href="/book/">Book a session</a>
+    </div>
+  </div></section>
 
 <footer><div class="wrap">
   <div class="fgrid">
@@ -401,30 +389,6 @@ document.querySelectorAll('.qa').forEach(q=>q.addEventListener('click',()=>q.cla
 function jump(id){const el=document.getElementById(id);if(el)scrollTo({top:el.offsetTop-60,behavior:'smooth'});}
 (function(){ const h=(location.hash||'').replace('#',''); if(h) setTimeout(()=>jump(h),60); })();
 
-
-const vzone=document.getElementById('vzone'),
-  vscrub=document.getElementById('vscrub'),
-  varrow=document.getElementById('varrow'),
-  vhero=document.getElementById('vhero'),
-  vhudbar=document.getElementById('vhudbar');
-const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
-let vcurrent=0, vtarget=0, vdur=5.08;
-vscrub.addEventListener('loadedmetadata',()=>{ vdur=vscrub.duration||5.08; });
-try{ vscrub.pause(); vscrub.currentTime=0; }catch(e){}
-window.vMeasure=function(){
-  const rect=vzone.getBoundingClientRect();
-  const total=vzone.offsetHeight-innerHeight;
-  vtarget=clamp(-rect.top/total);
-};
-(function vRender(){
-  requestAnimationFrame(vRender);
-  vcurrent+=(vtarget-vcurrent)*0.12;
-  const p=vcurrent;
-  if(vscrub.readyState>=1){ try{ vscrub.currentTime=Math.min(vdur-0.02,p*vdur); }catch(e){} }
-  if(varrow) varrow.style.opacity=String(clamp(1-p*3.5));
-  vhero.style.opacity=String(clamp((p-0.86)/0.14));
-  vhudbar.style.width=(p*100)+'%';
-})();
 
 </script>
 </body>
