@@ -282,6 +282,18 @@ nav.onlight .nav-light,nav.onlight .nav-light .mono{color:var(--ink);}
 .legal h3:first-child{margin-top:0;}
 .legal p{color:#3a3843;margin-bottom:12px;max-width:70ch;font-size:15.5px;}
 </style>
+<style>
+/* booking form: failure state keeps the visitor's answers and offers email */
+.inq-alert{margin:6px 0 16px;padding:16px 18px;border:1px solid rgba(27,26,31,.18);border-left:4px solid var(--brass);border-radius:10px;background:#fbf9f5;}
+.inq-alert[hidden]{display:none;}
+.inq-alert:focus{outline:2px solid var(--brass);outline-offset:2px;}
+.inq-alert strong{display:block;font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin-bottom:4px;}
+.inq-alert p{font-size:14px;color:#3a3843;margin-bottom:12px;}
+.inq-alert-actions{display:flex;flex-wrap:wrap;gap:10px;}
+.inq-alert-actions .btn{font-family:inherit;padding:11px 20px;}
+.inq-note a{color:#7A5F36;text-decoration:underline;}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:2px solid var(--brass);outline-offset:1px;}
+</style>
 </head>
 <body>
 
@@ -310,14 +322,14 @@ nav.onlight .nav-light,nav.onlight .nav-light .mono{color:var(--ink);}
         </div>
       </div>
       <div>
-        <form class="form" id="inqForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="return submitInquiry(event)">
+        <form class="form" id="inqForm" action="https://formspree.io/f/xnpnpzno" method="POST" onsubmit="return submitInquiry(event)">
           <div class="row">
-            <div class="field"><label>Full name <span class="req">*</span></label><input required name="name" id="inqName" placeholder="Your name"></div>
-            <div class="field"><label>Email <span class="req">*</span></label><input required type="email" name="email" placeholder="you@email.com"></div>
+            <div class="field"><label for="inqName">Full name <span class="req">*</span></label><input required name="name" id="inqName" autocomplete="name" placeholder="Your name"></div>
+            <div class="field"><label for="inqEmail">Email <span class="req">*</span></label><input required type="email" name="email" id="inqEmail" autocomplete="email" placeholder="you@email.com"></div>
           </div>
           <div class="row">
-            <div class="field"><label>Phone</label><input name="phone" placeholder="(206) 555-0123"></div>
-            <div class="field"><label>Service <span class="req">*</span></label>
+            <div class="field"><label for="inqPhone">Phone</label><input type="tel" name="phone" id="inqPhone" autocomplete="tel" inputmode="tel" placeholder="(206) 555-0123"></div>
+            <div class="field"><label for="inqService">Service <span class="req">*</span></label>
               <select required id="inqService" name="service">
                 <option value="">Choose one</option>
                 <option>Portrait</option>
@@ -330,13 +342,13 @@ nav.onlight .nav-light,nav.onlight .nav-light .mono{color:var(--ink);}
             </div>
           </div>
           <div class="row">
-            <div class="field"><label>Preferred date</label><input type="date" name="date"></div>
-            <div class="field"><label>Location / city</label><input name="location" placeholder="Seattle, Tacoma, Everett…"></div>
+            <div class="field"><label for="inqDate">Preferred date</label><input type="date" name="date" id="inqDate"></div>
+            <div class="field"><label for="inqLocation">Location / city</label><input name="location" id="inqLocation" autocomplete="address-level2" placeholder="Seattle, Tacoma, Everett…"></div>
           </div>
           <div class="row">
-            <div class="field"><label>People, property size, or event length</label><input name="scope" placeholder="e.g. family of 5 / 2,400 sq ft / 3-hr event"></div>
-            <div class="field"><label>Budget range</label>
-              <select name="budget">
+            <div class="field"><label for="inqScope">People, property size, or event length</label><input name="scope" id="inqScope" placeholder="e.g. family of 5 / 2,400 sq ft / 3-hr event"></div>
+            <div class="field"><label for="inqBudget">Budget range</label>
+              <select name="budget" id="inqBudget">
                 <option value="">Select</option>
                 <option>Under $500</option>
                 <option>$500 to $1,000</option>
@@ -347,9 +359,18 @@ nav.onlight .nav-light,nav.onlight .nav-light .mono{color:var(--ink);}
               </select>
             </div>
           </div>
-          <div class="field"><label>Tell me about your shoot</label><textarea name="details" placeholder="What are you looking for? Vibe, must-have shots, deadlines, anything helpful."></textarea></div>
-          <div class="field"><label>How did you hear about me?</label><input name="referral" placeholder="Instagram, a friend, Google…"></div>
+          <div class="field"><label for="inqDetails">Tell me about your shoot</label><textarea name="details" id="inqDetails" placeholder="What are you looking for? Vibe, must-have shots, deadlines, anything helpful."></textarea></div>
+          <div class="field"><label for="inqReferral">How did you hear about me?</label><input name="referral" id="inqReferral" placeholder="Instagram, a friend, Google…"></div>
           <input type="hidden" name="_subject" value="New inquiry from townleyphotography.com">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <div class="inq-alert" id="inqAlert" role="alert" tabindex="-1" hidden>
+            <strong>This form did not send.</strong>
+            <p>Nothing you typed is lost. Email your answers instead and they reach me just the same.</p>
+            <div class="inq-alert-actions">
+              <a class="btn btn-brass" id="inqMailto" href="mailto:contact@townleyphotography.com">Email my answers instead</a>
+              <button type="button" class="btn btn-ghost" id="inqCopy">Copy my answers</button>
+            </div>
+          </div>
           <button type="submit" class="btn btn-brass" id="inqSubmitBtn" style="width:100%;text-align:center;border:none;margin-top:4px;">Send inquiry</button>
           <div class="sub">No obligation. I'll only use your details to reply about your shoot.</div>
         </form>
@@ -357,7 +378,7 @@ nav.onlight .nav-light,nav.onlight .nav-light .mono{color:var(--ink);}
           <h3 id="inqThanks">Thanks!</h3>
           <p id="inqThanksBody">I'll review your details and get back to you within 1-2 business days to confirm availability and next steps.</p>
         </div>
-        <div class="inq-note">This form emails inquiries straight to Spencer via Formspree.</div>
+        <div class="inq-note">Prefer email? <a href="mailto:contact@townleyphotography.com">contact@townleyphotography.com</a></div>
       </div>
     </div>
   </div></section>
@@ -449,21 +470,47 @@ function jump(id){const el=document.getElementById(id);if(el)scrollTo({top:el.of
   const sel=document.getElementById('inqService');
   if(q&&sel){ [...sel.options].forEach(o=>{ if(o.value===q||o.textContent===q) sel.value=o.value||o.textContent; }); }
 })();
+function inqAnswers(form){
+  const labels={name:'Name',email:'Email',phone:'Phone',service:'Service',date:'Preferred date',location:'Location',scope:'People, property size, or event length',budget:'Budget',details:'About the shoot',referral:'Heard about you via'};
+  const fd=new FormData(form);
+  return Object.keys(labels).map(k=>{const v=(fd.get(k)||'').toString().trim();return v?labels[k]+': '+v:'';}).filter(Boolean).join('\n');
+}
+function inqShowAlert(form){
+  const CONTACT='contact@townleyphotography.com';
+  const box=document.getElementById('inqAlert');
+  const nm=(form.elements['name'].value||'').trim();
+  let body=inqAnswers(form);
+  if(body.length>1700) body=body.slice(0,1700)+'\n[trimmed: paste the rest with the Copy button]';
+  document.getElementById('inqMailto').href='mailto:'+CONTACT+'?subject='+encodeURIComponent('Photo shoot inquiry'+(nm?' from '+nm:''))+'&body='+encodeURIComponent(body+'\n');
+  box.hidden=false; box.focus({preventScroll:true}); box.scrollIntoView({block:'center',behavior:'smooth'});
+}
+(function(){
+  const d=document.getElementById('inqDate');
+  if(d) d.min=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,10);
+  const c=document.getElementById('inqCopy');
+  if(c) c.addEventListener('click',()=>{
+    const text='To: contact@townleyphotography.com\n\n'+inqAnswers(document.getElementById('inqForm'));
+    const ok=()=>{c.textContent='Copied';setTimeout(()=>{c.textContent='Copy my answers';},2000);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(ok,()=>{});}
+    else{const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();try{document.execCommand('copy');ok();}catch(e){}t.remove();}
+  });
+})();
 function submitInquiry(e){
   e.preventDefault();
   const form=document.getElementById('inqForm');
   const btn=document.getElementById('inqSubmitBtn');
-  const nm=(document.getElementById('inqName').value||'').trim();
-  const done=()=>{ form.style.display='none'; document.getElementById('inqDone').style.display=''; scrollTo({top:0,behavior:'smooth'}); };
-  const showThanks=()=>{ document.getElementById('inqThanks').textContent = nm ? ('Thanks, '+nm.split(' ')[0]+'!') : 'Thanks!'; done(); };
-  const showError=()=>{
-    document.getElementById('inqThanks').textContent='Something went wrong';
-    document.getElementById('inqThanksBody').textContent="Your inquiry didn't send. Please email hello@townleyphotography.com directly, or try again in a moment.";
-    done();
+  if(form.elements['_gotcha'].value) return false;
+  document.getElementById('inqAlert').hidden=true;
+  const showThanks=()=>{
+    const nm=(document.getElementById('inqName').value||'').trim();
+    document.getElementById('inqThanks').textContent = nm ? ('Thanks, '+nm.split(' ')[0]+'!') : 'Thanks!';
+    form.style.display='none'; document.getElementById('inqDone').style.display=''; scrollTo({top:0,behavior:'smooth'});
   };
+  /* Safety net: if the form's action ever reverts to the template placeholder, offer email instead of posting to a dead URL. */
+  if(/YOUR_FORM_ID/.test(form.action)){ inqShowAlert(form); return false; }
   if(btn){ btn.disabled=true; btn.textContent='Sending…'; }
   fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
-    .then(r=>{ r.ok?showThanks():showError(); }).catch(showError)
+    .then(r=>{ r.ok?showThanks():inqShowAlert(form); }).catch(()=>inqShowAlert(form))
     .finally(()=>{ if(btn){ btn.disabled=false; btn.textContent='Send inquiry'; } });
   return false;
 }
