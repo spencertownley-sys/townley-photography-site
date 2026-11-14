@@ -30,7 +30,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:cent
 .brand .wm{font-family:'Fraunces',serif;font-size:21px;letter-spacing:.02em;}
 .navlinks{display:flex;align-items:center;gap:30px;font-size:13px;letter-spacing:.03em;}
 .navlinks a:hover{color:var(--brass);}
-@media(max-width:820px){.navlinks a:not(.bookbtn){display:none;}}
+.menu-btn{display:none;font:inherit;font-size:13px;font-weight:500;letter-spacing:.04em;background:transparent;color:inherit;border:1px solid currentColor;border-radius:100px;padding:8px 18px;min-height:40px;cursor:pointer;}
+.navlinks a.bookbtn{padding:6px 18px;}
+@media(max-width:820px){
+.menu-btn{display:inline-block;}
+.navlinks{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:6px 32px 18px;background:var(--paper);border-bottom:1px solid rgba(27,26,31,.12);}
+.navlinks.open{display:flex;}
+.navlinks a{padding:14px 0;color:var(--ink);}
+.navlinks a.bookbtn{margin-top:8px;text-align:center;padding:12px 18px;}
+}
 
 .post-hero{padding:150px 0 40px;}
 .post-hero .meta{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:14px;}
@@ -63,7 +71,8 @@ footer a:hover{color:var(--paper);}
 
 <nav>
   <a class="brand" href="/"><div class="mono">T</div><div class="wm">Townley</div></a>
-  <div class="navlinks">
+  <button type="button" class="menu-btn" aria-expanded="false" aria-controls="navlinks">Menu</button>
+  <div class="navlinks" id="navlinks">
     <a href="/">Home</a>
     <a href="/portfolio/">Photography</a>
     <a href="/video/">Video</a>
@@ -119,5 +128,6 @@ footer a:hover{color:var(--paper);}
   <div class="fbot">&copy; 2026 Townley Photography &middot; Part of Townley Creative</div>
 </div></footer>
 
+<script src="/nav.js" defer></script>
 </body>
 </html>
