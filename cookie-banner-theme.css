@@ -1,0 +1,2 @@
+/* Townley Photography theme for the cookie notice. Brand tokens match the site's :root colours. */
+.cb { --cb-bg: #1B1A1F; --cb-fg: #F6F2EB; --cb-muted: #C9C6BE; --cb-border: #26362F; --cb-accent: #A8895C; --cb-accent-fg: #1B1A1F; --cb-radius: 24px; --cb-font: 'Inter', system-ui, sans-serif; }
