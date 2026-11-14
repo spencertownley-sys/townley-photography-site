@@ -1,7 +1,6 @@
 # --- confirmed old Wix pages ---
 /book-online              /book/                 301
 /english-privacy-policy   /privacy/              301
-/accessibility-statement  /                      301
 
 # --- common Wix defaults ---
 /about                    /                      301
