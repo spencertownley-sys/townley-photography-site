@@ -29,7 +29,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-img{display:block;max-width:100%;}
+img{display:block;max-width:100%;height:auto;}
 .imgwrap{overflow:hidden;background:#e6e0d5;}
 .imgwrap img{filter:saturate(.82) contrast(1.05) brightness(.98);transition:transform 1.1s cubic-bezier(.2,.8,.2,1);width:100%;height:100%;object-fit:cover;}
 .imgwrap:hover img{transform:scale(1.06);}
@@ -337,10 +337,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass-text);outline
   <section style="padding-top:0"><div class="wrap">
     <div class="sec-head ctr rv"><span class="eyebrow">Recent work</span><h2>A few <span class="it">frames.</span></h2></div>
     <div class="gallery">
-      <div class="gitem"><div class="imgwrap"><img src="/images/tile-landwild.jpg" alt="Fine art landscape photography, autumn aspen trees"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="/images/gallery-landwild-1.jpg" alt="Landscape photography, red rock desert road"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="/images/gallery-landwild-2.jpg" alt="Landscape photography, Washington State ferry"></div></div>
-      <div class="gitem"><div class="imgwrap"><img src="/images/gallery-landwild-3.jpg" alt="Wildlife photography, bighorn sheep"></div></div>
+      <div class="gitem"><div class="imgwrap"><img src="/images/tile-landwild.jpg" alt="Fine art landscape photography, autumn aspen trees" loading="lazy" decoding="async" width="900" height="698"></div></div>
+      <div class="gitem"><div class="imgwrap"><img src="/images/gallery-landwild-1.jpg" alt="Landscape photography, red rock desert road" loading="lazy" decoding="async" width="800" height="1000"></div></div>
+      <div class="gitem"><div class="imgwrap"><img src="/images/gallery-landwild-2.jpg" alt="Landscape photography, Washington State ferry" loading="lazy" decoding="async" width="800" height="1000"></div></div>
+      <div class="gitem"><div class="imgwrap"><img src="/images/gallery-landwild-3.jpg" alt="Wildlife photography, bighorn sheep" loading="lazy" decoding="async" width="750" height="1000"></div></div>
     </div>
   </div></section>
 
@@ -440,7 +440,7 @@ const POSTS=[
 ];
 function postCard(p,i){
   const d=['','d1','d2','d3','d4'][i%5];
-  return `<a class="jcard rv ${d}" href="/journal/${p.slug}.html"><div class="imgwrap"><img src="${p.img}" alt="${p.title}"></div><div class="meta">${p.cat} · ${p.month}</div><h3>${p.title}</h3><p>${p.excerpt}</p></a>`;
+  return `<a class="jcard rv ${d}" href="/journal/${p.slug}.html"><div class="imgwrap"><img src="${p.img}" srcset="${p.img.replace('.jpg','-400.webp')} 400w, ${p.img.replace('.jpg','-800.webp')} 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 380px" alt="${p.title}" loading="lazy" decoding="async" width="1200" height="800"></div><div class="meta">${p.cat} · ${p.month}</div><h3>${p.title}</h3><p>${p.excerpt}</p></a>`;
 }
 (function renderJournal(){
   const sorted=[...POSTS].sort((a,b)=>new Date(b.date)-new Date(a.date));
