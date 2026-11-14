@@ -301,6 +301,8 @@ nav.onlight .nav-light,nav.onlight .nav-light .mono{color:var(--ink);}
 .skip:focus{left:8px;}
 a:focus-visible,button:focus-visible{outline:2px solid var(--brass-text);outline-offset:3px;}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important;}}
+.linklike{background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer;text-decoration:underline;}
+.linklike:hover{color:var(--paper);}
 </style>
 <style>
 /* booking form: failure state keeps the visitor's answers and offers email */
@@ -314,6 +316,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass-text);outline
 .inq-note a{color:#7A5F36;text-decoration:underline;}
 .field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:2px solid var(--brass);outline-offset:1px;}
 </style>
+<link rel="stylesheet" href="/cookie-banner.css"><link rel="stylesheet" href="/cookie-banner-theme.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -420,7 +423,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass-text);outline
   </div>
   <div class="fbot">
     <div>&copy; 2026 Townley Photography &middot; Part of Townley Creative</div>
-    <div>@townley_photography &middot; @spencertownley &middot; <a href="/privacy/" style="display:inline">Privacy</a> &middot; <a href="/terms/" style="display:inline">Terms &amp; Licensing</a></div>
+    <div>@townley_photography &middot; @spencertownley &middot; <a href="/privacy/" style="display:inline">Privacy</a> &middot; <a href="/terms/" style="display:inline">Terms &amp; Licensing</a> &middot; <button type="button" data-cookie-settings class="linklike">Cookie settings</button></div>
   </div>
 </div></footer>
 
@@ -538,5 +541,6 @@ function submitInquiry(e){
 
 </script>
 <script src="/nav.js" defer></script>
+<script src="/cookie-banner.js" defer data-cookie-banner data-mode="notice" data-policy-url="/privacy/#cookies"></script>
 </body>
 </html>
