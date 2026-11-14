@@ -27,7 +27,7 @@
 @font-face{font-family:'Fraunces';font-style:normal;font-weight:300 600;font-display:swap;src:url(/fonts/fraunces-roman-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
 @font-face{font-family:'Inter';font-style:normal;font-weight:300 600;font-display:swap;src:url(/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;}
 @font-face{font-family:'Inter';font-style:normal;font-weight:300 600;font-display:swap;src:url(/fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-:root{--ink:#1B1A1F;--paper:#F6F2EB;--pacific:#26362F;--fog:#C9C6BE;--brass:#A8895C;--mut:#6a6875;}
+:root{--ink:#1B1A1F;--paper:#F6F2EB;--pacific:#26362F;--fog:#C9C6BE;--brass:#A8895C;--brass-text:#7d6440;--brass-lt:#C9AC7C;--mut:#6a6875;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
@@ -53,19 +53,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:cent
 .navlinks.open{display:flex;}
 .navlinks a{padding:14px 0;color:var(--ink);}
 .navlinks a.bookbtn{margin-top:8px;text-align:center;padding:12px 18px;}
+.navlinks.open a.on{color:var(--brass-text);}
 }
 
 .post-hero{padding:150px 0 40px;}
-.post-hero .meta{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:14px;}
+.post-hero .meta{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-text);margin-bottom:14px;}
 .post-hero h1{font-size:clamp(32px,5vw,54px);line-height:1.08;max-width:18ch;}
 .post-cover{margin:34px 0 6px;border-radius:14px;overflow:hidden;background:#e6e0d5;}
 .post-cover img{width:100%;display:block;filter:saturate(.85) contrast(1.03);}
-.backhome{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.05em;color:var(--brass);cursor:pointer;margin-bottom:6px;}
+.backhome{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.05em;color:var(--brass-text);cursor:pointer;margin-bottom:6px;}
 article{padding:20px 0 70px;font-size:17px;color:#33313a;}
 article p{margin-bottom:20px;max-width:66ch;}
 article h2{font-size:24px;margin:34px 0 12px;color:var(--ink);font-weight:400;}
 article .it{font-style:italic;}
-article a{color:var(--brass);border-bottom:1px solid rgba(168,137,92,.35);}
+article a{color:var(--brass-text);border-bottom:1px solid rgba(125,100,64,.4);}
 article a:hover{border-bottom-color:var(--brass);}
 article ul{margin:0 0 20px 20px;max-width:64ch;}
 article li{margin-bottom:8px;}
@@ -83,9 +84,14 @@ footer .wm{font-family:'Fraunces',serif;font-size:20px;color:var(--paper);margin
 footer a{display:inline-block;font-size:13px;color:rgba(246,242,235,.75);margin-right:16px;}
 footer a:hover{color:var(--paper);}
 .fbot{margin-top:18px;font-size:12px;color:rgba(246,242,235,.55);}
+.skip{position:absolute;left:-9999px;top:8px;z-index:200;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:8px;font-size:14px;}
+.skip:focus{left:8px;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass-text);outline-offset:3px;}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important;}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <nav>
   <a class="brand" href="/"><div class="mono">T</div><div class="wm">Townley</div></a>
@@ -98,6 +104,7 @@ footer a:hover{color:var(--paper);}
     <a class="btn btn-brass bookbtn" href="/book/">Book</a>
   </div>
 </nav>
+<main id="main" tabindex="-1">
 
 <div class="wrap post-hero">
   <a class="backhome" href="/journal/">&larr; Back to the Journal</a>
@@ -135,6 +142,8 @@ footer a:hover{color:var(--paper);}
     <a class="btn btn-brass" href="/book/">Send an inquiry</a>
   </div>
 </div>
+
+</main>
 
 <footer><div class="wrap">
   <div class="wm">Townley</div>
