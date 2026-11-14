@@ -281,6 +281,9 @@ nav.onlight .nav-light,nav.onlight .nav-light .mono{color:var(--ink);}
 .legal h3{font-size:21px;margin:34px 0 10px;font-weight:400;font-family:'Fraunces',serif;}
 .legal h3:first-child{margin-top:0;}
 .legal p{color:#3a3843;margin-bottom:12px;max-width:70ch;font-size:15.5px;}
+.ptable{width:100%;border-collapse:collapse;margin:0 0 16px;font-size:14.5px;color:#3a3843;}
+.ptable th,.ptable td{text-align:left;vertical-align:top;padding:9px 12px 9px 0;border-bottom:1px solid rgba(27,26,31,.12);}
+.ptable th{font-weight:600;color:var(--ink);}
 </style>
 </head>
 <body>
@@ -301,32 +304,59 @@ nav.onlight .nav-light,nav.onlight .nav-light .mono{color:var(--ink);}
     <a class="backhome" href="/">&larr; Back to home</a>
     <div class="sec-head rv"><span class="eyebrow">Privacy</span><h2>Privacy <span class="it">policy.</span></h2>
       <p>What this site collects, why, and who it is shared with. Written to be read, not to be skimmed past.</p>
-      <p style="font-size:13px;color:var(--mut);margin-top:10px">Last updated: August 23, 2026</p></div>
+      <p style="font-size:13px;color:var(--mut);margin-top:10px">Last updated: 14 November 2026</p></div>
   </div></section>
   <section style="padding-top:0"><div class="wrap" style="max-width:820px">
     <div class="legal rv">
+      <h3>Who is responsible</h3>
+      <p>Townley Photography (https://townleyphotography.com) is run by [PLACEHOLDER: owner legal name], [PLACEHOLDER: city, state, country]. Contact: <a href="mailto:contact@townleyphotography.com" style="text-decoration:underline">contact@townleyphotography.com</a>.</p>
       <h3>What I collect</h3>
-      <p>When you submit the inquiry form on this site, I collect the information you type into it: your name, email address, and optionally your phone number, preferred date, location or city, project details, budget range, and how you heard about me. Nothing on this form is required except your name, email, and the service you are interested in.</p>
-      <p>If you subscribe to the newsletter, I collect your email address.</p>
+      <p>When you submit the inquiry form on this site, I collect the information you type into it: your name, email address, and optionally your phone number, preferred date, location or city, project scope, budget range, project details, and how you heard about me. Nothing on this form is required except your name, email, and the service you are interested in.</p>
+      <p>Emails you send to the business address are handled in Google Workspace.</p>
+      <p>Like every website, the companies that host and deliver this site receive your IP address and browser details in order to send you pages and keep the service secure.</p>
       <p>I do not collect payment information through this website.</p>
       <h3>Why I collect it</h3>
-      <p>Solely to reply to your inquiry, confirm availability, scope the work, and provide a quote. If you subscribe to the newsletter, to send you location guides and seasonal offers, which you can unsubscribe from at any time.</p>
-      <p>I do not sell your personal information. I do not share it with advertisers.</p>
+      <p>Solely to reply to your inquiry, confirm availability, scope the work, and provide a quote, and to keep the site secure and working. Under EU and UK law the legal bases are providing the service you asked for (contract), keeping the site secure and working (legitimate interests), and your consent where this policy says something is optional.</p>
+      <p>I do not sell your personal information. I do not share it with advertisers, and it is not shared for cross-context behavioural advertising.</p>
       <h3>Who processes it</h3>
-      <p>Form submissions are delivered to me by Formspree, a third-party form processor, which handles the message in transit and stores a copy in my account. Their privacy practices are governed by their own policy.</p>
-      <p>This site loads typefaces from Google Fonts, which means Google receives your IP address when a page loads. No other third-party trackers, advertising pixels, or analytics tools are currently running on this site.</p>
-      <p>The site is hosted on Cloudflare Pages, which processes standard server request data.</p>
-      <h3>Cookies and tracking</h3>
-      <p>This website does not set advertising or analytics cookies. If that changes, this policy will be updated and this section will say so plainly.</p>
+      <table class="ptable">
+        <thead><tr><th scope="col">Company</th><th scope="col">What they do for this site</th><th scope="col">Where</th></tr></thead>
+        <tbody>
+          <tr><td>GitHub (GitHub Pages)</td><td>Website hosting</td><td>United States</td></tr>
+          <tr><td>Cloudflare</td><td>DNS, CDN, security proxy and Web Analytics</td><td>United States</td></tr>
+          <tr><td>Formspree</td><td>Inquiry form processing and storage of submissions</td><td>United States</td></tr>
+          <tr><td>Google</td><td>Business email (Google Workspace) and web fonts</td><td>United States</td></tr>
+        </tbody>
+      </table>
+      <p>Form submissions are delivered to me by Formspree, a third-party form processor in the United States. It handles the message in transit and stores a copy in my account. Their privacy practices are governed by their own policy.</p>
+      <p>The site is hosted on GitHub Pages and delivered through Cloudflare, which acts as the site's DNS, CDN and security proxy. GitHub and Cloudflare process standard server request data such as IP address, requested page and browser details.</p>
+      <p>This site loads typefaces from Google Fonts, which means Google receives your IP address and browser details when a page loads.</p>
+      <p>Cloudflare also adds Cloudflare Web Analytics to this site: a cookieless page view counter added by our CDN, Cloudflare, which receives the page address, referrer, IP address and browser details. It does not use cookies and is not used for advertising.</p>
+      <p>No other third-party trackers, advertising pixels, or analytics tools run on this site.</p>
+      <h3>International transfers</h3>
+      <p>The companies above are based in the United States. Where data leaves the EU or UK it is covered by the provider's standard contractual clauses or Data Privacy Framework certification.</p>
+      <h3 id="cookies">Cookies and storage</h3>
+      <p>This site only uses the cookies and browser storage it needs to work. It does not use advertising or cross-site tracking cookies, so there is nothing to opt in to.</p>
+      <table class="ptable">
+        <thead><tr><th scope="col">Name</th><th scope="col">Set by</th><th scope="col">Purpose</th><th scope="col">How long</th></tr></thead>
+        <tbody>
+          <tr><td>cf_clearance (cookie)</td><td>Cloudflare</td><td>Security check that shows your browser passed Cloudflare's bot protection. Necessary.</td><td>1 year</td></tr>
+          <tr><td>cookie-consent (browser storage)</td><td>This site</td><td>Remembers that you have seen the cookie notice. Necessary.</td><td>180 days</td></tr>
+        </tbody>
+      </table>
+      <p>You can clear or block cookies and site storage in your browser settings. Necessary items are needed for the site to work. You can reopen the cookie notice at any time with the Cookie settings link in the page footer.</p>
       <h3>How long I keep it</h3>
-      <p>Inquiry emails are retained in my business email for as long as needed to serve you and to keep ordinary business records. You can ask me to delete your information at any time and I will, unless I am required to keep it for tax or legal reasons.</p>
-      <h3>Your choices</h3>
-      <p>You can ask me what information I hold about you, ask me to correct it, or ask me to delete it. Depending on where you live, you may have a formal legal right to do so. Either way, just ask and I will handle it.</p>
-      <p>To make any of these requests, email <a href="mailto:contact@townleyphotography.com" style="text-decoration:underline">contact@townleyphotography.com</a>.</p>
+      <p>Inquiry emails are retained in my business email for as long as needed to serve you and to keep ordinary business records, and I keep inquiry details for [PLACEHOLDER: retention period for inquiries, for example 24 months]. Formspree keeps a copy of each submission in my account for [PLACEHOLDER: Formspree retention period, set in the Formspree dashboard]. Server logs held by GitHub and Cloudflare are kept under their own policies. You can ask me to delete your information at any time and I will, unless I am required to keep it for tax or legal reasons.</p>
+      <h3>Your rights and choices</h3>
+      <p>You can ask me what information I hold about you, ask me to correct it, or ask me to delete it. Depending on where you live, you may have a formal legal right to do so.</p>
+      <p>EU and UK visitors have rights of access, correction, deletion, restriction, objection, portability, and withdrawing consent, and may complain to their data protection authority. California and other US state residents have the right to know, delete and correct, and to opt out of sale or sharing. This site does not sell or share personal information, and it honours Global Privacy Control signals.</p>
+      <p>To make any of these requests, email <a href="mailto:contact@townleyphotography.com" style="text-decoration:underline">contact@townleyphotography.com</a>. I will answer within 30 days, and you will never be treated differently for using these rights.</p>
       <h3>Photographs of you</h3>
       <p>Photographs taken during a paid session are governed by the agreement we sign for that session, not by this policy. Whether I may display your images publicly is a separate permission you grant or withhold in that agreement, and you can change your mind by contacting me.</p>
       <h3>Children</h3>
-      <p>This site is not directed at children and I do not knowingly collect information from anyone under 13 through it. Portrait sessions involving minors are booked and consented to by a parent or guardian.</p>
+      <p>This site is not directed at children and I do not knowingly collect information from anyone under 13 (under 16 in the EU and UK) through it. Portrait sessions involving minors are booked and consented to by a parent or guardian.</p>
+      <h3>Changes</h3>
+      <p>If this policy changes in a way that matters, the date above changes and a notice is shown on the site.</p>
       <h3>Contact</h3>
       <p>Questions about this policy: <a href="mailto:contact@townleyphotography.com" style="text-decoration:underline">contact@townleyphotography.com</a>.</p>
     </div>
